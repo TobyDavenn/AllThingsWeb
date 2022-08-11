@@ -40,7 +40,7 @@ You can try an XSS polyglot <br>
 Try New Lines to break the firewall - newline URL encoded is %0 - <.script>%0alert(1)</script> - try with different HTML tags <br>
 Try double encoding a newline break %2522 <br> 
 New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
-Injecting anchor tag without whitespaces -breaking up characters with&Tab; between each character<br>
+Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
 <br>
 <h2>A href bypasses</h2>
