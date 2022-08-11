@@ -24,21 +24,25 @@ nmap -iL outfile.txt -p 8000,8001,8002,8080,8443,5000,5001,88,9000,9001,9111,901
 **FINDING URLS**<br>
 I use several tools for this job and my wordlists come from the following link https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content <br>
 or I use the locate command on kali linux if using CLI tools "locate Web-Content" <br>
-**waybackurls
-gau
-gospider
-wfuzz
-dirsearch
-ffuff
-Feroxbuster
-JavaScript Link Finder**
+<br>
+**waybackurls <br>
+gau <br>
+gospider <br>
+wfuzz <br>
+dirsearch <br>
+ffuff <br>
+Feroxbuster <br>
+JavaScript Link Finder** 
 <br>
 
 **Waybackurls** <br> is a tool that will scrape the wayback archive for URLS. We use this with GF patterns read here https://github.com/1ndianl33t/Gf-Patterns <br>
 waybackurls DOMAIN | tee waybackurls.txt <br>
+<br>
 **OR** 
 <br>
+<br>
 cat aliveoutfile.txt | waybackurls | tee waybackurls.txt
+<br>
 <br>
 If you want to search for patterns you can use the following <br>
 cat aliveoutfile.txt | waybackurls | gf xss |tee waybackurls.txt <br>
@@ -64,15 +68,17 @@ cat outfile.txt | gau | gf PATTERN | tee FILE.txt
 **wfuzz** <br>
 output these files using >> urls.txt after each command
 wfuzz -w wordlist/general/common.txt http://DOMAIN <br>
-https://wfuzz.readthedocs.io/en/latest/user/basicusage.html 
+https://wfuzz.readthedocs.io/en/latest/user/basicusage.html <br>
 <br>
 **dirsearch**
 dirsearch -d DOMAIN -w WORDLIST --deep-recursive (for recursive) <br>
 I like to use this on a bash loop if scanning a file containing subdomains so I will use the following bash script <br>
 for i in $(cat aliveoutfile.txt)do; subfinder -d $i;done<br>
 This one liner can be used on any script just replace "subfinder" with the tool name then the syntax<br>
+<br>
 **feroxbuster**
 feroxbuster --url DOMAIN -w WORDLIST <br>
+<br>
 **JavaScript Link Finder** <br>
 This is a Burp tool plugin, download this on the BAPP store and it will crawl for further endpoints in Javascript <br>
 <br>
@@ -105,35 +111,35 @@ for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
 <br>
   
 **QUICK WINS WORDLIST**<br>
-/phpinfo.php
-/info.php
-/admin.php
-/api/apidocs
-/apidocs
-/api
-/api/v2
-/api/v1
-/v2
-/package.json
-/security.txt
-/application.wadl
-/api/apidocs
-/swagger
-/swagger-ui
-/swagger-ui.html
-/swagger/swagger-ui.html
-/api/swagger-ui.html
-/v1.x/swagger-ui.html
-/swagger/index.html
-/graphql
-/graphiql
-/register
-/login
-/.git
-/.env
-/.htaccess
-/script
-/console
+/phpinfo.php<br>
+/info.php<br>
+/admin.php<br>
+/api/apidocs<br>
+/apidocs<br>
+/api<br>
+/api/v2<br>
+/api/v1<br>
+/v2<br>
+/package.json<br>
+/security.txt<br>
+/application.wadl<br>
+/api/apidocs<br>
+/swagger<br>
+/swagger-ui<br>
+/swagger-ui.html<br>
+/swagger/swagger-ui.html<br>
+/api/swagger-ui.html<br>
+/v1.x/swagger-ui.html<br>
+/swagger/index.html<br>
+/graphql<br>
+/graphiql<br>
+/register<br>
+/login<br>
+/.git<br>
+/.env<br>
+/.htaccess<br>
+/script<br>
+/console<br>
 
 
 
