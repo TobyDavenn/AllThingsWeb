@@ -2,7 +2,6 @@
 but for the purpose of this document we will pretend everything under a domain is inscope and you will need to apply it if your scope is different**
 
 **SUBDOMAIN ENUMERATION**<br>
-
 Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMAIN -o outfile.txt <br>
 amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
