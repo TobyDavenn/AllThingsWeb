@@ -108,7 +108,9 @@ cat waybackurls.txt | qsreplace BURPCOLLAB | airixss -p BURPCOLLAB <br>
 Now you'll want to run Nuclei on your hoste file <br>
 for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
 <br>
-  
+Now you'll want to run secrets finder which is "snallygaster" <br>
+for i in $(cat aliveoutfile.txt)do snallygaster -h $i;done <br>
+ 
 **QUICK WINS WORDLIST**<br>
 /phpinfo.php<br>
 /info.php<br>
