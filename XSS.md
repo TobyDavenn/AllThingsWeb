@@ -6,7 +6,8 @@ View the page source and quickly filter for test and see what encoding is in pla
 If tags are filtered but your input is placed within a value="test" can you add test" eventhandler and does the " get filtered? <br>
 If your input is directly into a script tag, can you break out the context? E.g. if your input lands within a "var" can you close the var <br>
 var srchstring = 'test' - enter test'-alert(1)-' and see what happens. You may need to use a ; after the first ' - test'; -alert(1)-' <br>
-Burpsuite allows you to customise scans, create a scan and remove all scans except the scan titled "reflection". Run this on your burp project file to identify all reflected inputs on the web application. <br>
+<br>
+Burpsuite allows you to customise scans, create a scan and remove all scans except the scan titled "reflection". Run this on your burp project file to identify all reflected inputs on the web application and test from there. <br>
 <br>
 Never submit a vulnerability with alert(1) show impact, use document.cookie and demonostrate a cookie stealer POC aslong as cookies are not set to httpONLY (not readable by javascript if set). <br>
 <br>
