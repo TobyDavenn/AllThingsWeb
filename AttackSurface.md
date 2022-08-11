@@ -62,6 +62,7 @@ cat outfile.txt | gau | gf PATTERN | tee FILE.txt
 <br>
 
 **wfuzz** <br>
+output these files using >> urls.txt after each command
 wfuzz -w wordlist/general/common.txt http://DOMAIN <br>
 https://wfuzz.readthedocs.io/en/latest/user/basicusage.html 
 <br>
@@ -79,19 +80,30 @@ You can proxy results from these crawlers into BurpSuite using the -p https://12
 dirsearch uses the --proxy= syntax
 <br>
 
+Now that you have all URL's, it is advised to run paraminer on the output file you have created for all all subdomains, will need a bash one liner <br>
+for i in $(cat aliveoutfile.txt)do; paramspider.py -d $i >> paramspider.txt <br>
+<br>
+<br>
+Further Param discovery - arjun -i aliveoutfile.txt -oT arjun.txt <br>
+Move contents of arjun.txt into waybackurls.txt
+<br>
 
-
-
-**paramater fuzzing and mining on burp**<br>
-
-**403 bypassing on burpsuite**<br>
-
-
-
-**BASH SCRIPTING**<br>
-
-
-
+**BASH TIME**
+<br>
+Now you have all your files, you want to externally check for vulns <br>
+First I check for Reflected XSS using qsreplace and airixss <br>
+cat waybackurls.txt | gf xss | qsreplace '<test>' | airixss -p "<test>" <br>
+This will check all urls grepped under the xss catagory for reflection of unfiltered <>tags <br>
+<br>
+Open Redirect - cat waybackurls.txt | gf redirect | qsreplace "https://evil.com" | httpx -status-code -location -fc 404,401 <br>
+<br>
+SSRF One Liner - Open Burpsuite and go to collab client, copy the value. <br>
+cat waybackurls.txt | qsreplace BURPCOLLAB | airixss -p BURPCOLLAB <br>
+<br> 
+Now you'll want to run Nuclei on your hoste file <br>
+for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
+<br>
+  
 **QUICK WINS WORDLIST**<br>
 /phpinfo.php
 /info.php
