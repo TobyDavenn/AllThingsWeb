@@ -1,4 +1,5 @@
 <h1>Cross Site Scriping</h1><br>
+<b> REMOVE THE . FROM ALL XSS SCRIPTS, IT KEPT EMBEDDING INTO GITHUB EVEN IF WITHIN CODE BLOCKS </b>
 <h2>first glance methodology </h2>
 On a website that allows you to register an account, test every feature avaliable with the payload <.h1>test<./h1>(remove the . it was rendering my h1 tag on this page). Do this on every feature that allows input. <br>
 Navigate the application and see if theres any places your H1 tag is interpreted. <br>
