@@ -41,6 +41,10 @@ Try double encoding a newline break %2522 <br>
 New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
+ Try URL encoding on the payload <br>
+ Try double URL encoding and see if this gets decoded <br>
+ Try Unicoding normization - https://appcheck-ng.com/wp-content/uploads/unicode_normalization.html - select a character and see if the ASCII value is reflected <br>
+ Try normal unicode  - https://www.branah.com/unicode-converter
  <br>
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
