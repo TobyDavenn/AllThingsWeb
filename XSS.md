@@ -1,7 +1,7 @@
 **Cross Site Scriping** <br>
 <br>
 **first glance methodology**
-On a website that allows you to register an account, test every feature avaliable with the payload <h1>test</h1>. Do this on every feature that allows input. <br>
+On a website that allows you to register an account, test every feature avaliable with the payload <!--<h1>test</h1>--> . Do this on every feature that allows input. <br>
 Navigate the application and see if theres any places your H1 tag is interpreted. <br>
 Via the page source and quickly filter for test and see what encoding is in place on your input. <br>
 If tags are filtered but your input is placed within a value="test" can you add test" eventhandler and does the " get filtered? <br>
