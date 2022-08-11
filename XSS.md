@@ -1,5 +1,6 @@
-<h1>Cross Site Scriping</h1>
-`<h1>test<h1>`
+<h1>Cross Site Scriping</h1><br>
+<br>
+<code><h1>test<h1></code><br>
 <br>
 <h2>first glance methodology </h2>
 On a website that allows you to register an account, test every feature avaliable with the payload <.h1>test<./h1>(remove the . it was rendering my h1 tag on this page). Do this on every feature that allows input. <br>
