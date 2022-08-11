@@ -3,7 +3,7 @@ but for the purpose of this document we will pretend everything under a domain i
 <br>
 <br>
 
-**SUBDOMAIN ENUMERATION**<br>
+<h1>SUBDOMAIN ENUMERATION</h1><br>
 Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMAIN -o outfile.txt <br>
 amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
@@ -13,7 +13,7 @@ censys manual checking. Go to the legit domain website and check the SSL Cert, u
 What all this has done is built you a large file of subdomains owned by the company. <br>
 <br>
 
-**PORT SCANNING**<br>
+<h1>PORT SCANNING</h1><br>
  Now you have a large list, you'll want to see what is alive on the usual https 443 port. I use httprobe for this <br>
 cat outfile.txt | httprobe -p https:443 | tee aliveoutfile.txt <br>
 You may want to look for non standard ports, you can do this changing the "443" specified above. <br>
@@ -21,7 +21,7 @@ NMAP is also useful, I always do a scan across uncommon web ports <br>
 nmap -iL outfile.txt -p 8000,8001,8002,8080,8443,5000,5001,88,9000,9001,9111,9011,9002,9090 | tee aliveports.txt
 <br>
 
-**FINDING URLS**<br>
+<h1>FINDING URLS</h1><br>
 I use several tools for this job and my wordlists come from the following link https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content <br>
 or I use the locate command on kali linux if using CLI tools "locate Web-Content" <br>
 <br>
@@ -35,7 +35,7 @@ Feroxbuster <br>
 JavaScript Link Finder** 
 <br>
 
-**Waybackurls** <br> is a tool that will scrape the wayback archive for URLS. We use this with GF patterns read here https://github.com/1ndianl33t/Gf-Patterns <br>
+<h2>Waybackurls</h2> <br> is a tool that will scrape the wayback archive for URLS. We use this with GF patterns read here https://github.com/1ndianl33t/Gf-Patterns <br>
 waybackurls DOMAIN | tee waybackurls.txt <br>
 <br>
 **OR** 
@@ -65,21 +65,21 @@ gau DOMAIN <br>
 cat outfile.txt | gau | gf PATTERN | tee FILE.txt
 <br>
 
-**wfuzz** <br>
+<h2>wfuzz</h2> <br>
 output these files using >> urls.txt after each command
 wfuzz -w wordlist/general/common.txt http://DOMAIN <br>
 https://wfuzz.readthedocs.io/en/latest/user/basicusage.html <br>
 <br>
-**dirsearch**
+<h2>dirsearch</h2>
 dirsearch -d DOMAIN -w WORDLIST --deep-recursive (for recursive) <br>
 I like to use this on a bash loop if scanning a file containing subdomains so I will use the following bash script <br>
 for i in $(cat aliveoutfile.txt)do; subfinder -d $i;done<br>
 This one liner can be used on any script just replace "subfinder" with the tool name then the syntax<br>
 <br>
-**feroxbuster**
+<h2>feroxbuster</h2>
 feroxbuster --url DOMAIN -w WORDLIST <br>
 <br>
-**JavaScript Link Finder** <br>
+</h2>JavaScript Link Finder</h2> <br>
 This is a Burp tool plugin, download this on the BAPP store and it will crawl for further endpoints in Javascript <br>
 <br>
 You can proxy results from these crawlers into BurpSuite using the -p https://127.0.0.1:8081 syntax (depends what IP your BS and port is active)<br>
@@ -94,7 +94,7 @@ Further Param discovery - arjun -i aliveoutfile.txt -oT arjun.txt <br>
 Move contents of arjun.txt into waybackurls.txt
 <br>
 
-**BASH TIME**
+<h1>BASH TIME</h1>
 Now you have all your files, you want to externally check for vulns <br>
 First I check for Reflected XSS using qsreplace and airixss <br>
 cat waybackurls.txt | gf xss | qsreplace '<test>' | airixss -p "<test>" <br>
@@ -112,7 +112,7 @@ for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
 Now you'll want to run secrets finder which is "snallygaster" <br>
 for i in $(cat aliveoutfile.txt)do snallygaster -h $i;done <br>
  
-**QUICK WINS WORDLIST**<br>
+<h1>QUICK WINS WORDLIST</h1><br>
 /phpinfo.php<br>
 /info.php<br>
 /admin.php<br>
