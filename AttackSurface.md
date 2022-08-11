@@ -1,5 +1,7 @@
 **Attack Surface defines the whole recon process of penetration testing and web hacking. This very much is controversial due to your scope,
 but for the purpose of this document we will pretend everything under a domain is inscope and you will need to apply it if your scope is different**
+<br>
+<br>
 
 **SUBDOMAIN ENUMERATION**<br>
 Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMAIN -o outfile.txt <br>
@@ -12,8 +14,7 @@ What all this has done is built you a large file of subdomains owned by the comp
 <br>
 
 **PORT SCANNING**<br>
- 
-Now you have a large list, you'll want to see what is alive on the usual https 443 port. I use httprobe for this <br>
+ Now you have a large list, you'll want to see what is alive on the usual https 443 port. I use httprobe for this <br>
 cat outfile.txt | httprobe -p https:443 | tee aliveoutfile.txt <br>
 You may want to look for non standard ports, you can do this changing the "443" specified above. <br>
 NMAP is also useful, I always do a scan across uncommon web ports <br>
