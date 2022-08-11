@@ -2,7 +2,7 @@
 but for the purpose of this document we will pretend everything under a domain is inscope and you will need to apply it if your scope is different**
 
 **SUBDOMAIN ENUMERATION**<br>
-<br>
+
 Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMAIN -o outfile.txt <br>
 amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
@@ -13,7 +13,7 @@ What all this has done is built you a large file of subdomains owned by the comp
 <br>
 
 **PORT SCANNING**<br>
-<br> 
+ 
 Now you have a large list, you'll want to see what is alive on the usual https 443 port. I use httprobe for this <br>
 cat outfile.txt | httprobe -p https:443 | tee aliveoutfile.txt <br>
 You may want to look for non standard ports, you can do this changing the "443" specified above. <br>
@@ -95,7 +95,6 @@ Move contents of arjun.txt into waybackurls.txt
 <br>
 
 **BASH TIME**
-<br>
 Now you have all your files, you want to externally check for vulns <br>
 First I check for Reflected XSS using qsreplace and airixss <br>
 cat waybackurls.txt | gf xss | qsreplace '<test>' | airixss -p "<test>" <br>
