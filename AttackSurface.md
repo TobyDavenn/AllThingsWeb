@@ -104,6 +104,7 @@ Open Redirect - cat waybackurls.txt | gf redirect | qsreplace "https://evil.com"
 <br>
 SSRF One Liner - Open Burpsuite and go to collab client, copy the value. <br>
 cat waybackurls.txt | qsreplace BURPCOLLAB | airixss -p BURPCOLLAB <br>
+Here you want to check for the link being reflected and check for HTTP interaction on Burp Collab, if you get a hit, check manually for SSRF
 <br> 
 Now you'll want to run Nuclei on your hoste file <br>
 for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
