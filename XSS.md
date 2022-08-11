@@ -11,6 +11,8 @@ var srchstring = 'test' - enter test'-alert(1)-' and see what happens. You may n
 Burpsuite allows you to customise scans, create a scan and remove all scans except the scan titled "reflection". Run this on your burp project file to identify all reflected inputs on the web application and test from there. <br>
 <br>
 Never submit a vulnerability with alert(1) show impact, use document.cookie and demonostrate a cookie stealer POC aslong as cookies are not set to httpONLY (not readable by javascript if set). <br>
+right click on your input and view in inspect element aswell as source to see potential DOM XSS. <br>
+If on a url add ?<> and add tag within the <>, see if this fires a DOM xss if url is embedded within URL. Also could try break out element if within a element DOM with " <br>
 <br>
 <h2>Alert POC Alternatives</h2>
 If alert is blocked or filtered, first try confirm(1), print() or prompt(1).<br>
