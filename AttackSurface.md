@@ -66,7 +66,7 @@ wfuzz -w wordlist/general/common.txt http://DOMAIN <br>
 https://wfuzz.readthedocs.io/en/latest/user/basicusage.html 
 <br>
 **dirsearch**
-dirsearch -d DOMAIN -w WORDLIST -r (for recursive) <br>
+dirsearch -d DOMAIN -w WORDLIST --deep-recursive (for recursive) <br>
 I like to use this on a bash loop if scanning a file containing subdomains so I will use the following bash script <br>
 for i in $(cat aliveoutfile.txt)do; subfinder -d $i;done<br>
 This one liner can be used on any script just replace "subfinder" with the tool name then the syntax<br>
@@ -75,7 +75,8 @@ feroxbuster --url DOMAIN -w WORDLIST <br>
 **JavaScript Link Finder** <br>
 This is a Burp tool plugin, download this on the BAPP store and it will crawl for further endpoints in Javascript <br>
 <br>
-You can proxy results from these crawlers into BurpSuite using the -p https://127.0.0.1:8081 syntax (depends what IP your BS and port is active)
+You can proxy results from these crawlers into BurpSuite using the -p https://127.0.0.1:8081 syntax (depends what IP your BS and port is active)<br>
+dirsearch uses the --proxy= syntax
 <br>
 
 
