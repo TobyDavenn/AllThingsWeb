@@ -1,7 +1,11 @@
 <h1> Bypassing 403 Responses </h1> <br>
 <b> Install 403 bypass onto Burpsuite from the extender tool, this then becomes an extension you can run on 403 pages on Burpsuite </b></p> <br>
 Further automated tool - https://github.com/iamj0ker/bypass-403 <br>
-<b> Quick One Liner for 403 codes - subfinder -d domain.com — silent | httpx -fc 200,301,302,500,503,404,501 -sc </b></br>
+<b> Quick One Liner for 403 codes - subfinder -d domain.com — silent | httpx -fc 200,301,302,500,503,404,501 -sc | tee 403.txt </b>
+sudo mv 403.txt /directory of 403-bypass <br>
+for i in $(cat 403.txt); do ./bypass-403.sh $i;done <br>
+
+<br>
 
 <h2> Directory Brute Forcing </h2><br>
 Bruteforce the URL path on the 403 directory. Use different wordlists and experiment to see if you can access further pages after the 403 directory <br>
