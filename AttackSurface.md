@@ -119,10 +119,10 @@ Here you want to check for the link being reflected and check for HTTP interacti
  - cat waybackurls.txt | qsreplace "test{{7*7}}" | airixss -p "test49" > sstifuzz.txt <br>
  <br>
 
- <h4>Now you'll want to run Nuclei on your hoste file </h4><br>
+ <h4>Run Nuclei on your hoste file </h4><br>
 for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
 <br>
-<h4>Now you'll want to run secrets finder which is "snallygaster" </h4><br>
+<h4>Secrets finder - "snallygaster" </h4><br>
 for i in $(cat aliveoutfile.txt)do snallygaster -h $i;done <br>
  
 <h1>QUICK WINS WORDLIST</h1><br>
