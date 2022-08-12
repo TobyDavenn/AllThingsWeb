@@ -79,4 +79,4 @@ site.com/secret.json –> HTTP 200 OK (ruby) <br>
 The request would be /FUZZadmin - /FUZZ/admin - /adminFUZZ <br>
 <br>
   <h2> accessing via cname </h2> <br>
-  Should you come across a 403 subdomain, try accessing via it's cname. - dig domain.com <br>
+  Should you come across a 403 subdomain, try accessing via it's cname. - dig domain.com or use the site - https://dnschecker.org/cname-lookup.php <br>
