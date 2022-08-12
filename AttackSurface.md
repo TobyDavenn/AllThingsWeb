@@ -12,6 +12,7 @@ censys manual checking. Go to the legit domain website and check the SSL Cert, u
 <br>
 What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks
 <br>
+<br> use hurricane search on an IP address to identify the ASN - https://bgp.he.net/ and then use the whois tab top right to verify
 What all this has done is built you a large file of subdomains owned by the company. <br>
 <br>
 
