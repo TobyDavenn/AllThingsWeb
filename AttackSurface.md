@@ -107,7 +107,7 @@ Now you have all your files, you want to externally check for vulns <br>
 <h4>First I check for Reflected XSS using qsreplace and airixss </h4><br>
 cat waybackurls.txt | gf xss | qsreplace '<.test>' | airixss -p "<.test>" (remove the . infront of test)<br>
 This will check all urls grepped under the xss catagory for reflection of unfiltered <>tags <br>
-Use the same one liner but for url encoder - cat waybackurls.txt | gf xss | qsreplace '%3Ctest%3E' | airixss -p "<test>" <br>
+Use the same one liner but for url encoder - cat waybackurls.txt | gf xss | qsreplace '%3Ctest%3E' | airixss -p "<.test>" <br>
 <br>
  <h4>Open Redirect </h4><br> 
  - cat waybackurls.txt | gf redirect | qsreplace "https://evil.com" | httpx -status-code -location -fc 404,401 <br>
