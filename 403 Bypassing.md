@@ -22,7 +22,7 @@ This is common on Apache Tomcat <br>
 Don't just send a get request, try POST, PATCH, PUT, GET, TRACE <br>
 <br>
 
-<h2 Add .json to the end of the file name, or brute force a .json file endpoint after the 403 file </h2>
+<h2> Add .json to the end of the file name, or brute force a .json file endpoint after the 403 file </h2>
   /api/user - 403 <br>
   /api/user/properties.json - 200 OK
 <br>
