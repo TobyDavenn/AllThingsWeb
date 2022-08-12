@@ -27,6 +27,7 @@ This is common on Apache Tomcat <br>
 
 <h2> Change request methods </h2> <br>
 Don't just send a get request, try POST, PATCH, PUT, GET, TRACE <br>
+Try curl -H "Content-Length:0" -X POST https://www.domain/403'dpage
 <br>
 
 <h2> Add .json to the end of the file name, or brute force a .json file endpoint after the 403 file </h2>
@@ -74,4 +75,7 @@ site.com//;//secret –> HTTP 200 OK <br>
 site.com/secret.json –> HTTP 200 OK (ruby) <br> 
 <br>
  For unicoding, if you are trying to access /admin -403, try adding all the unicode characters in this list within the path https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/Unicode.txt <br>
-The request would be /FUZZadmin - /FUZZ/admin - /adminFUZZ
+The request would be /FUZZadmin - /FUZZ/admin - /adminFUZZ <br>
+<br>
+  <h2> accessing via cname </h2> <br>
+  Should you come across a 403 subdomain, try accessing via it's cname. - dig domain.com <br>
