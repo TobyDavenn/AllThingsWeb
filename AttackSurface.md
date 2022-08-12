@@ -9,6 +9,7 @@ amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
 sublist3r.py - sublist3r.py -d ENTERDOMAIN >> outfile.txt <br>
 censys manual checking. Go to the legit domain website and check the SSL Cert, use the O or CN and serach via hosts or certs on censys, you can filter via ports <br>
+<br>
 What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks
 <br>
 What all this has done is built you a large file of subdomains owned by the company. <br>
