@@ -115,7 +115,7 @@ This will check all urls grepped under the xss catagory for reflection of unfilt
 cat waybackurls.txt | qsreplace BURPCOLLAB | airixss -p BURPCOLLAB <br>
 Here you want to check for the link being reflected and check for HTTP interaction on Burp Collab, if you get a hit, check manually for SSRF
 <br> 
- <h4>SSTI One Liner </h4><br<
+ <h4>SSTI One Liner </h4><br>
  - cat waybackurls.txt | qsreplace "test{{7*7}}" | airixss -p "test49" > sstifuzz.txt <br>
  <br>
 
