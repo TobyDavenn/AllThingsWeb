@@ -102,7 +102,7 @@ Move contents of arjun.txt into waybackurls.txt
 <h1>BASH TIME</h1>
 Now you have all your files, you want to externally check for vulns <br>
 <h4>First I check for Reflected XSS using qsreplace and airixss </h4><br>
-cat waybackurls.txt | gf xss | qsreplace '<test>' | airixss -p "<test>" <br>
+cat waybackurls.txt | gf xss | qsreplace '<test>' | airixss -p "<.test>" (remove the . infront of test)<br>
 This will check all urls grepped under the xss catagory for reflection of unfiltered <>tags <br>
 <br>
  <h4>Open Redirect </h4><br> 
