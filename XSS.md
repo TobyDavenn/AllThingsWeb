@@ -16,7 +16,7 @@ Right click on your input and view in inspect element aswell as source to see po
 If on a url add ?<> and add tag within the <>, see if this fires a DOM xss if url is embedded within URL. Also could try break out element if within a element DOM with " <br>
 <br>
 <h2> Quick Win bash scripting </h2><br>
-<b> You will need waybackurls, gf patterns, qsreplace and airixss installed.<b>
+<b> You will need waybackurls, gf patterns, qsreplace and airixss installed.</b><br>
 cat waybackurls.txt | gf xss | qsreplace '<.test>' | airixss -p "<.test>" (remove the . infront of test)<br>
 This will check all urls grepped under the xss catagory for reflection of unfiltered <>tags <br>
 Use the same one liner but for url encoder - cat waybackurls.txt | gf xss | qsreplace '%3Ctest%3E' | airixss -p "<test>" <br>
