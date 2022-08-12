@@ -1,5 +1,6 @@
 <h1> Bypassing 403 Responses </h1> <br>
 <b> Install 403 bypass onto Burpsuite from the extender tool, this then becomes an extension you can run on 403 pages on Burpsuite </b></p> <br>
+Further automated tool - https://github.com/iamj0ker/bypass-403 <br>
 
 <h2> Directory Brute Forcing </h2><br>
 Bruteforce the URL path on the 403 directory. Use different wordlists and experiment to see if you can access further pages after the 403 directory <br>
