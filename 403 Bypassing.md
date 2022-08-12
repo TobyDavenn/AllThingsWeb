@@ -1,5 +1,5 @@
 <h1> Bypassing 403 Responses </h1> <br>
-<b> Install 403 bypass onto Burpsuite from the extender tool, this then becomes an extension you can run on 403 pages on Burpsuite </p> <br>
+<b> Install 403 bypass onto Burpsuite from the extender tool, this then becomes an extension you can run on 403 pages on Burpsuite </b></p> <br>
 
 <h2> Directory Brute Forcing </h2><br>
 Bruteforce the URL path on the 403 directory. Use different wordlists and experiment to see if you can access further pages after the 403 directory <br>
@@ -22,7 +22,7 @@ This is common on Apache Tomcat <br>
 Don't just send a get request, try POST, PATCH, PUT, GET, TRACE <br>
 <br>
 
-<h2 Add .json to the end of the file name, or brute force a .json file endpoint after the 403 file <h2>
+<h2 Add .json to the end of the file name, or brute force a .json file endpoint after the 403 file </h2>
   /api/user - 403 <br>
   /api/user/properties.json - 200 OK
 <br>
