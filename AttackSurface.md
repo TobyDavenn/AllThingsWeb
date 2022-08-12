@@ -8,7 +8,9 @@ Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMA
 amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
 sublist3r.py - sublist3r.py -d ENTERDOMAIN >> outfile.txt <br>
+crtsh_enum.py domain.com >> outfile.txt
 censys manual checking. Go to the legit domain website and check the SSL Cert, use the O or CN and serach via hosts or certs on censys, you can filter via ports <br>
+We can use censys api on kali using command censys subdomains domain.com (have to add api key)
 <br>
 What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks
 <br>
@@ -99,20 +101,26 @@ Move contents of arjun.txt into waybackurls.txt
 
 <h1>BASH TIME</h1>
 Now you have all your files, you want to externally check for vulns <br>
-First I check for Reflected XSS using qsreplace and airixss <br>
+<h4>First I check for Reflected XSS using qsreplace and airixss </h4><br>
 cat waybackurls.txt | gf xss | qsreplace '<test>' | airixss -p "<test>" <br>
 This will check all urls grepped under the xss catagory for reflection of unfiltered <>tags <br>
 <br>
-Open Redirect - cat waybackurls.txt | gf redirect | qsreplace "https://evil.com" | httpx -status-code -location -fc 404,401 <br>
+ <h4>Open Redirect </h4><br> 
+ - cat waybackurls.txt | gf redirect | qsreplace "https://evil.com" | httpx -status-code -location -fc 404,401 <br>
 <br>
-SSRF One Liner - Open Burpsuite and go to collab client, copy the value. <br>
+ <h4>SSRF One Liner </h4><br>
+ - Open Burpsuite and go to collab client, copy the value. <br>
 cat waybackurls.txt | qsreplace BURPCOLLAB | airixss -p BURPCOLLAB <br>
 Here you want to check for the link being reflected and check for HTTP interaction on Burp Collab, if you get a hit, check manually for SSRF
 <br> 
-Now you'll want to run Nuclei on your hoste file <br>
+ <h4>SSTI One Liner </h4><br<
+ - cat waybackurls.txt | qsreplace "test{{7*7}}" | airixss -p "test49" > sstifuzz.txt <br>
+ <br>
+
+ <h4>Now you'll want to run Nuclei on your hoste file </h4><br>
 for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
 <br>
-Now you'll want to run secrets finder which is "snallygaster" <br>
+<h4>Now you'll want to run secrets finder which is "snallygaster" </h4><br>
 for i in $(cat aliveoutfile.txt)do snallygaster -h $i;done <br>
  
 <h1>QUICK WINS WORDLIST</h1><br>
