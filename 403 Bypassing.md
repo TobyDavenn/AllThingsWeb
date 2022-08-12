@@ -3,7 +3,7 @@
 Further automated tool - https://github.com/iamj0ker/bypass-403 <br>
 <b> Quick One Liner for 403 codes - subfinder -d domain.com — silent | httpx -fc 200,301,302,500,503,404,501 -sc | tee 403.txt </b>
 sudo mv 403.txt /directory of 403-bypass <br>
-for i in $(cat 403.txt); do ./bypass-403.sh $i;done <br>
+for i in $(cat 403.txt); do ./bypass-403.sh $i | grep "200";done <br>
 
 <br>
 
