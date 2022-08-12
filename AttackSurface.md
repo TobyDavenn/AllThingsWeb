@@ -8,7 +8,7 @@ Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMA
 amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
 sublist3r.py - sublist3r.py -d ENTERDOMAIN >> outfile.txt <br>
-crtsh_enum.py domain.com >> outfile.txt
+crtsh_enum.py domain.com >> outfile.txt <br>
 censys manual checking. Go to the legit domain website and check the SSL Cert, use the O or CN and serach via hosts or certs on censys, you can filter via ports <br>
 We can use censys api on kali using command censys subdomains domain.com (have to add api key)
 <br>
