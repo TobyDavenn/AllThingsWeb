@@ -60,7 +60,7 @@ Is <.script>alert(1)</script.> filtered? Try: <br>
  <br>
 Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
  <br>
-< and > can be replace with html entities &lt; and &gt; <br>
+< and > can be replace with html entities - https://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder <br>
  <br>
 You can try an XSS polyglot <br>
  https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626<br>
