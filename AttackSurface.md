@@ -97,7 +97,8 @@ Now that you have all URL's, it is advised to run paraminer on the output file y
 for i in $(cat aliveoutfile.txt)do; paramspider.py -d $i >> paramspider.txt <br>
 <br>
 <br>
-Further Param discovery - arjun -i aliveoutfile.txt -oT arjun.txt <br>
+<h4>Further Param discovery </h4><br>
+Arjun -i aliveoutfile.txt -oT arjun.txt <br>
 Move contents of arjun.txt into waybackurls.txt
 <br>
 
