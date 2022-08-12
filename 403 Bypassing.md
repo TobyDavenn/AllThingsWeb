@@ -58,7 +58,7 @@ Host: localhost <br>
 X-Rewrite-URL: /path/file <br> 
   Your normal request would be a request to / with the headers identifying the actual path. <br>
   <br>
-  <h2> Path Fuzzing <h2> <br>
+  <h2> Path Fuzzing </h2> <br>
     if /admin is blocked : <br>
 Try using /%2e/admin _(if the access is blocked by a proxy, this could bypass the protection). Try also_** /%252e**/admin (double URL encode) <br>
 Try Unicode bypass: /%ef%bc%8fadmin (The URL encoded chars are like "/") so when it's encoded back it will be //path and maybe you will have already bypassed the /path name check <br>
