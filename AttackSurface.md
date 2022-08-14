@@ -69,7 +69,8 @@ This will now give you output on URL endpoints that follow those patterns (does 
 <br>
 The exact same is for GAU <br>
 gau DOMAIN <br>
-cat outfile.txt | gau | gf PATTERN | tee FILE.txt
+cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
+<b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy http://proxyaddress:port
 <br>
 
 <h2>wfuzz</h2> <br>
