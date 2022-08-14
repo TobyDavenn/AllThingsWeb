@@ -94,7 +94,8 @@ dirsearch uses the --proxy= syntax
 <br>
 
 Now that you have all URL's, it is advised to run paraminer on the output file you have created for all all subdomains, will need a bash one liner <br>
-for i in $(cat aliveoutfile.txt)do; paramspider.py -d $i >> paramspider.txt <br>
+for i in $(cat aliveoutfile.txt)do; paramspider.py -d $i >> paramspider.txt <br> <br>
+Or you can use arjun with the bash one liner - for i in $(cat waybackurls.txt); do arjun -i $i;done <br>
 <br>
 <br>
 <h4>Further Param discovery </h4><br>
