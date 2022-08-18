@@ -66,6 +66,7 @@ Run through the payload list here on intruder and select grep for url decoded va
  <br>
 You can try an XSS polyglot <br>
  https://gist.github.com/michenriksen/d729cd67736d750b3551876bbedbe626<br>
+ https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/Polyglots/XSS-Polyglots.txt
  <br>
 If you have HTML Injection on a tag that is not useful, try New Lines to break the firewall on an malicious tag - newline URL encoded is %0 - <.script>%0alert(1)<./script> - try with different HTML tags <br>
  <br>
