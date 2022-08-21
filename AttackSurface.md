@@ -74,7 +74,10 @@ cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
 <b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy http://proxyaddress:port <br>
  Always grep file types - waybackurls domain.com | grep zip   (can do txt, docx, xslx etc) <br>
 <br>
-
+<h2>Param discovery</h2> <br>
+Run paramspider on target name to discover URLS and parameters. <br>
+Run Arjun on direct URL endpoints to discover further Parameters in the URL request <br>
+<br>
 <h2>wfuzz</h2> <br>
 output these files using >> urls.txt after each command
 wfuzz -w wordlist/general/common.txt http://DOMAIN <br>
@@ -132,10 +135,6 @@ for i in $(cat aliveoutfile.txt)do nuclei -u $i;done <br>
 for i in $(cat aliveoutfile.txt)do snallygaster -h $i;done <br>
 <br>
 Run socialhunter for social media broken links <br>
-<br>
-<h2>Param discovery</h2> <br>
-Run paramspider on target name to discover URLS and parameters. <br>
-Run Arjun on direct URL endpoints to discover further Parameters in the URL request <br>
 <br>
  
 <h1>QUICK WINS WORDLIST</h1><br>
