@@ -87,6 +87,8 @@ Run paramspider on target name to discover URLS and parameters - add to file nam
 Run Arjun on direct URL endpoints to discover further Parameters in the URL request <br>
 <br>
 <b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy http://proxyaddress:port <br>
+ <br>
+ From here I like to run exact burp scans across the discovered URLS such as my XSS scan, SSRF, Open redirect etc <br>
  Always grep file types - waybackurls domain.com | grep zip   (can do txt, docx, xslx etc) <br>
 <br>
 <h2>wfuzz</h2> <br>
