@@ -25,6 +25,7 @@ for i in $(cat subdomains.txt);do amass enum -d $i >> subdomainsmain.txt;done <b
 for i in $(cat subdomains.txt);do sublist3r -d $i >> subdomainsmain.txt;done <br>
 for i in $(cat subdomains.txt);do assetfinder $i | grep $i >> subdomainsmain.txt;done <br>
 for i in $(cat subdomains.txt);do python3 crtsh.py $i >> subdomainsmain.txt;done <br>
+Move all into one file <br>
 <br>
 <b> Now use crtsh.py to do subdomain scanning on subdomains to find even more </b> <br>
 <br> use hurricane search on an IP address to identify the ASN - https://bgp.he.net/ and then use the whois tab top right to verify
