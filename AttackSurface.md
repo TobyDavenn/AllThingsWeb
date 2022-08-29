@@ -81,12 +81,13 @@ This will now give you output on URL endpoints that follow those patterns (does 
 The exact same is for GAU <br>
 gau DOMAIN <br>
 cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
-<b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy http://proxyaddress:port <br>
- Always grep file types - waybackurls domain.com | grep zip   (can do txt, docx, xslx etc) <br>
 <br>
 <h2>Param discovery</h2> <br>
-Run paramspider on target name to discover URLS and parameters. <br>
+Run paramspider on target name to discover URLS and parameters - add to file name waybackurls.txt. <br>
 Run Arjun on direct URL endpoints to discover further Parameters in the URL request <br>
+<br>
+<b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy http://proxyaddress:port <br>
+ Always grep file types - waybackurls domain.com | grep zip   (can do txt, docx, xslx etc) <br>
 <br>
 <h2>wfuzz</h2> <br>
 output these files using >> urls.txt after each command
