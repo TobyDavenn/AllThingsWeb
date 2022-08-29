@@ -16,6 +16,8 @@ censys subdomains domain.com (have to add api key)
 <br>
 What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks
 <br>
+Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist -mc 200,301,302,403 <br>
+
 <br> use hurricane search on an IP address to identify the ASN - https://bgp.he.net/ and then use the whois tab top right to verify
 What all this has done is built you a large file of subdomains owned by the company. <br>
 Also ensure you do subdomain scanning on found subdomains to get even more unique domains <br>
