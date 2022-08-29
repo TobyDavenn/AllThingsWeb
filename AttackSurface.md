@@ -19,6 +19,7 @@ What I also do is go to censys, select hosts, type in the domain name, then top 
 Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist -mc 200,301,302,403 <br>
 <br>
 <b>BASH SCRIPTING THIS </b><br>
+First make file called subdomains.txt and add all domains in <br>
 for i in $(cat subdomains.txt);do Subfinder -d $i >> subdomainsmain.txt;done <br>
 for i in $(cat subdomains.txt);do amass enum -d $i >> subdomainsmain.txt;done <br>
 for i in $(cat subdomains.txt);do sublist3r -d $i >> subdomainsmain.txt;done <br>
