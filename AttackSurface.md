@@ -41,7 +41,7 @@ NMAP is also useful, I always do a scan across uncommon web ports <br>
 nmap -iL outfile.txt -p 8000,8001,8002,8080,8443,5000,5001,88,9000,9001,9111,9011,9002,9090 | tee aliveports.txt
 <br>
 <br>
-<b> Use gowitness to screenshot domains to have a look at whats interesting - gowitness file aliveoutfile.txt </b> <br>
+<b> Use gowitness to screenshot domains to have a look at whats interesting - gowitness file -f aliveoutfile.txt </b> <br>
 <br>
 <h1>FINDING URLS</h1><br>
 I use several tools for this job and my wordlists come from the following link https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content <br>
