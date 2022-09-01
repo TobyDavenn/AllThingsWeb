@@ -68,6 +68,9 @@ waybackurls DOMAIN | tee waybackurls.txt <br>
 cat aliveoutfile.txt | waybackurls | tee waybackurls.txt
 <br>
 <br>
+Use one liner for interesting files cat alivesubs.txt | gauplus -subs | grep ".csv" <br>
+
+<br>
 If you want to search for patterns you can use the following <br>
 cat aliveoutfile.txt | waybackurls | gf xss |tee waybackurls.txt <br>
 replace "xss" with the following patterns <br>
