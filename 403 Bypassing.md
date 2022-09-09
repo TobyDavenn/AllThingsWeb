@@ -84,3 +84,6 @@ The request would be /FUZZadmin - /FUZZ/admin - /adminFUZZ <br>
 <br>
   <h2> accessing via cname </h2> <br>
   Should you come across a 403 subdomain, try accessing via it's cname. - dig domain.com cname or use the site - https://dnschecker.org/cname-lookup.php <br>
+  <br>
+  <h1>Empty Request on HTTP 1.1</h1><br>
+  Remove all elements to request except URL and change request to HTTP 1.1 and send <br>
