@@ -97,7 +97,8 @@ cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
 <h2>Param discovery</h2> <br>
 echo tesla.com | subfinder -silent | httpx -silent | cariddi -intensive <br>
 <br>
-Do subdomain crawling with go spioder and hakrawler and send to burp with httpx
+Do subdomain crawling with go spioder and hakrawler and send to burp with httpx - gospider -S sites.txt -o output -c 10 -d 1 <br>
+<br>
 
 Run paramspider on target name or file to discover URLS and parameters - add to file name waybackurls.txt. <br>
 Run Arjun on direct URL endpoints to discover further Parameters in the URL request arjun -i subdomains.txt -m GET -oT param.txt <br> 
