@@ -58,6 +58,9 @@ ffuff <br>
 Feroxbuster <br>
 JavaScript Link Finder** 
 <br>
+Extract all js files with gau, burp, waybackurls or gospider and grep for further endpoints - cat file.js | grep -aoP "(?<= (\"|\'|\`))\/[a-zA-z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u    <br>
+Use gospider against subdomain list with gospider -s subdomains.txt -p http:burpproxy <br>
+
 
 <br> 1 liner for hidden JS endpoints - assetfinder example.com | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars"; done <br>
 <br>
@@ -72,7 +75,6 @@ cat aliveoutfile.txt | waybackurls | tee waybackurls.txt
 <br>
 Use one liner for interesting files cat alivesubs.txt | gauplus -subs | grep ".csv" <br>
 <br>
-Extract all js files with gau, burp, waybackurls or gospider and grep for further endpoints - cat file.js | grep -aoP "(?<= (\"|\'|\`))\/[a-zA-z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u    <br>
 <br>
 If you want to search for patterns you can use the following <br>
 cat aliveoutfile.txt | waybackurls | gf xss |tee waybackurls.txt <br>
