@@ -19,7 +19,8 @@ What I also do is go to censys, select hosts, type in the domain name, then top 
 Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist -mc 200,301,302,403 <br>
 <br>
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
-Use uncover for censys IPs to export to nuclei - └─$ uncover -cs "bbc.co.uk"
+Use uncover for censys IPs to export to nuclei - └─$ uncover -cs "bbc.co.uk"     - uncover -cs "bbc.co.uk" | httpx | nuclei <br>
+
 
 
 <b>BASH SCRIPTING THIS </b><br>
