@@ -20,6 +20,7 @@ Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist 
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
 Use uncover for censys IPs to export to nuclei - └─$ uncover -cs "bbc.co.uk"     - uncover -cs "bbc.co.uk" | httpx | nuclei <br>
 Or use uncover with ASN range for the company - have to find online - echo ASNNUMBER | uncover | httpx | nuclei <br>
+<br>
 
 
 
