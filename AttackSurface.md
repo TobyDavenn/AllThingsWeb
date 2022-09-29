@@ -18,6 +18,7 @@ Or use uncover with ASN range for the company - have to find online - echo ASNNU
 What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks
 <br>
 Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist -mc 200,301,302,403 <br>
+wfuzz -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --sc 200,202,204,301,302,403 -u "https://stripeolt.com" -H "Host:FUZZ.example.com" -t 100 --hw "40" <br>
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
 <br>
 
