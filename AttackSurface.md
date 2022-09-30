@@ -4,6 +4,7 @@ but for the purpose of this document we will pretend everything under a domain i
 <br>
 
 <h1>SUBDOMAIN ENUMERATION</h1><br>
+ASN Mapping - asnmap -d STRIPEOLT.COM <br>
 Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMAIN -o outfile.txt <br>
 amass - amass enum -d DOMAIN >> outfile.txt <br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
