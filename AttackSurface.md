@@ -20,7 +20,6 @@ What I also do is go to censys, select hosts, type in the domain name, then top 
 Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist -mc 200,301,302,403 <br>
 wfuzz -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --sc 200,202,204,301,302,403 -u "https://stripeolt.com" -H "Host:FUZZ.example.com" -t 100 --hw "40" <br>
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
-<br>
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
 <br>
 
