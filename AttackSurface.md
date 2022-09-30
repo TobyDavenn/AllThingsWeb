@@ -22,7 +22,7 @@ wfuzz -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --sc
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
 <br>
-
+<br>
 
 
 <b>BASH SCRIPTING THIS </b><br>
