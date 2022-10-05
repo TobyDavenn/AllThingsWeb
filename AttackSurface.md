@@ -111,7 +111,7 @@ Do subdomain crawling with go spioder and hakrawler and send to burp with httpx 
 Run paramspider on target name or file to discover URLS and parameters - add to file name waybackurls.txt. <br>
 Run Arjun on direct URL endpoints to discover further Parameters in the URL request arjun -i subdomains.txt -m GET -oT param.txt <br> 
 <br>
-<b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy=http://proxyaddress:port <br>
+<b> You can pass all URLS to Burp using - cat waybackurls.txt | httpx -http-proxy http://proxyaddress:port <br>
  <br>
  From here I like to run exact burp scans across the discovered URLS such as my XSS scan, SSRF, Open redirect etc <br>
  Always grep file types - waybackurls domain.com | grep zip   (can do txt, docx, xslx etc) <br>
