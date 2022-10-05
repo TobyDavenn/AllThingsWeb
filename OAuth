@@ -1,1 +1,1 @@
-
+Try see if OAuth redirect_uri accepts localhost -- if it does use DNS binding to see if localhost can be set to a DNS format and redirect to a public server
