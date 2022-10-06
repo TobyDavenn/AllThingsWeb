@@ -23,6 +23,8 @@ wfuzz -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --sc
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
 <br>
+<h1> VHOST DIscovery </h1> <br>
+copy subdomain file to directory /vhosts-sieve and run python3 vhosts-sieve.py -d file.txt -o file2.txt <br>
 <br>
 
 
