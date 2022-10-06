@@ -16,7 +16,7 @@ We can use censys api on kali using command <br>
 censys subdomains domain.com (have to add api key) or use the below <br>
 Use uncover for censys IPs to export to nuclei - └─$ uncover -cs "bbc.co.uk"     - uncover -cs "bbc.co.uk" | httpx | nuclei <br>
 Or use uncover with ASN range for the company - have to find online - echo ASNNUMBER | uncover | httpx | nuclei <br>
-What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks
+What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks <br>
 <br>
 Wordlist - use https://github.com/six2dez/OneListForAll
 <br>
