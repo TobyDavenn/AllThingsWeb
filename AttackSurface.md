@@ -74,6 +74,9 @@ Use gospider against subdomain list with gospider -s subdomains.txt -p http:burp
 
 <br> 1 liner for hidden JS endpoints - assetfinder example.com | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars"; done <br>
 <br>
+<br>
+Another endpoint js method ---- python3 linkfinder.py -i https://example.com/index.js -o cli  <br>
+<br>
 <h2>Waybackurls</h2><br> is a tool that will scrape the wayback archive for URLS. We use this with GF patterns read here https://github.com/1ndianl33t/Gf-Patterns <br>
 waybackurls DOMAIN | tee waybackurls.txt <br>
 <br>
