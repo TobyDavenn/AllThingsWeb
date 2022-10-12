@@ -79,6 +79,10 @@ Use gospider against subdomain list with gospider -s subdomains.txt -p http:burp
 <br>
 Another endpoint js method ---- python3 linkfinder.py -i https://example.com/index.js -o cli  <br>
 <br>
+<p>run these two lines below one at a time </p>
+ gau paypalobjects.com |grep -iE '\.js'|grep -ivE '\.json'|sort -u  >> paypalJS.txt <br>
+ cat paypalJS.txt|xargs -n2 -I @ bash -c 'echo -e "\n[URL] @\n";python3 linkfinder.py -i @ -o cli' >> paypalJSPathsWithUrl.txt <br>
+<br>
 <h2>Waybackurls</h2><br> is a tool that will scrape the wayback archive for URLS. We use this with GF patterns read here https://github.com/1ndianl33t/Gf-Patterns <br>
 waybackurls DOMAIN | tee waybackurls.txt <br>
 <br>
