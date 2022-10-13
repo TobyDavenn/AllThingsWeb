@@ -5,7 +5,7 @@ nullbyte evil.com%00whitelist.com
 ./    whitelist.com/./evil.com     whitelist.com/.@evil.com    whitelist.com//evil.com
 
 
-Try payloads below replace whitelisted with domain that trying to redirect from
+Try payloads below replace whitelisted with domain that trying to redirect from. Or go through the variations and add domain you want to redirect too
 /%09/example.com
 /%2f%2fexample.com
 /%2f%2f%2fbing.com%2f%3fwww.omise.co
