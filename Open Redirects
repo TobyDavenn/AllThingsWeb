@@ -1,8 +1,9 @@
-URL fragements evil.com#whitelist.com
-credential tricking   whitelist.com@evil.com
+URL fragements ------  evil.com#whitelist.com
+credential tricking ------  whitelist.com@evil.com
 . bypass 。  (or url encode it)
-nullbyte evil.com%00whitelist.com
-./    whitelist.com/./evil.com     whitelist.com/.@evil.com    whitelist.com//evil.com
+nullbyte ------ evil.com%00whitelist.com
+./   whitelist.com/.@evil.com    whitelist.com//evil.com
+Browsers treat // as http(s):   ---(should relative redirects be allowed) url=//evil.com    if this is blocked try url=/%0A/evil.com      ----- %2F%0A%2Fevil.com
 
 
 Try payloads below replace whitelisted with domain that trying to redirect from. Or go through the variations and add domain you want to redirect too
