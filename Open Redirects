@@ -1,1 +1,5 @@
-
+URL fragements evil.com#whitelist.com
+credential tricking   whitelist.com@evil.com
+. bypass 。  (or url encode it)
+nullbyte evil.com%00whitelist.com
+./    whitelist.com/./evil.com     whitelist.com/.@evil.com    whitelist.com//evil.com
