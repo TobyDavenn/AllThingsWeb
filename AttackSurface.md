@@ -78,6 +78,8 @@ Use gospider against subdomain list with gospider -s subdomains.txt -p http:burp
 <br>
 <br>
 Another endpoint js method ---- python3 linkfinder.py -i https://example.com/index.js -o cli  <br>
+Or you can extract all js links from a site with gay, hakwraler and gospider, output to a file, cd to linkfinder and run ---- for i in $(cat envajsurls2.txt);do python3 linkfinder.py -i $i -o cli;done
+<br>
 <br>
 gospider -s https://bbclogin.id.tools.bbc.co.uk -q --js
 <br>
