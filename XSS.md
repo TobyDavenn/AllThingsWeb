@@ -228,3 +228,7 @@ Where to look for Blind XSS…… <br>
 8- Feedback Page <br>
 9- Chat Applications <br>
 10- Any app that requires user moderation <br>
+ <br>
+ <h2> DOM </h2>
+ Always read source for document.location.href or document.hash.substring <br>
+ If this is passing input to the dom it is reading from the url --- insert to url #<script>alert(1)</script> or other xss varaitions after # <br>
