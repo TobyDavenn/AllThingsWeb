@@ -1,1 +1,20 @@
 
+Potential for blacklist - try everything here - https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Request%20Forgery
+
+Url encode letters of directory
+
+Double url encode directory characters
+
+Potential for exploiting with open redirect
+
+Potential for out of band detection - (referr header etc)
+
+Try url confusion 
+url=exptected-host@evil.com (@ allows embedded creds)
+Url=expected-host#evil.com (url fragment)
+Url=expected-host.evil.com (dns based)
+
+• You can URL-encode characters to confuse the URL-parsing code. This is particularly useful if the code that implements the filter handles URL-encoded characters differently than the code that performs the back-end HTTP request.
+You can use combinations of these techniques together.
+
+try url=https://evil.com\@expectedhost.com
