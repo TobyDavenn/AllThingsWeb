@@ -28,7 +28,7 @@ use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/su
 <h1> VHOST DIscovery </h1> <br>
 copy subdomain file to directory /vhosts-sieve and run python3 vhosts-sieve.py -d file.txt -o file2.txt <br>
 ffuf -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u https://towercoldchain.com/ -H "Host: FUZZ.towercoldchain.com" <br>
-wfuzz -c -f subdomains.txt -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt -u "http://mentorquotes.htb/" -H "Host: FUZZ.mentorquotes.htb" --hl 9 (better) <br>
+wfuzz -c -f subdomains.txt -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u "http://metapress.htb/" -H "Host: FUZZ.metapress.htb" --hl 9 (better) <br>
 <br>
 <br>
 
