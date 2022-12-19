@@ -62,6 +62,7 @@ nmap -iL outfile.txt -p 8000,8001,8002,8080,8443,5000,5001,88,9000,9001,9111,901
 I use several tools for this job and my wordlists come from the following link https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content <br>
 or I use the locate command on kali linux if using CLI tools "locate Web-Content" <br>
 <br>
+dirbuster seems to be good choice if you add recursive and add all extensions such as php,sh,txt,py,zip,bak <br>
 **waybackurls <br>
 gau <br>
 gospider <br>
