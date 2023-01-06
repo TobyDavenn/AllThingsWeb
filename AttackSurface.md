@@ -163,7 +163,7 @@ cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
 <h3> JavaScript Extract </h3><br>
 Extract all js files with gau, burp, waybackurls or gospider and grep for further endpoints - cat file.js | grep -aoP "(?<= (\"|\'|\`))\/[a-zA-z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u    <br>
 <br>
-Pass all JS endpoints to linkfinder.py -i endpoints.txt -o cli <br>
+or Pass all JS endpoints found on burp/dirscanning to linkfinder.py -i endpoints.txt -o cli <br>
 <br>
 Use burp jsendpoints tab to look through <br>
 <br>
