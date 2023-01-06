@@ -5,27 +5,44 @@ but for the purpose of this document we will pretend everything under a domain i
 
 <h1>SUBDOMAIN ENUMERATION</h1><br>
 ASN Mapping - asnmap -d STRIPEOLT.COM <br>
+<br>
 masscan -p 80,443 -iL ASNRANGE.TXT -oL out.txt --- cat out.txt | httpx -title
 <br>
+<br>
 Subfinder - (subfinder.py avaliable on github) python3 subfinder.py -d ENTERDOMAIN -o outfile.txt <br>
+<br>
 amass - amass enum -d DOMAIN >> outfile.txt <br>
+<br>
 assetfinder - assetfinder ENTERDOMAIN | grep ENTERDOMAIN >> outfile.txt <br>
+<br>
 sublist3r.py - sublist3r.py -d ENTERDOMAIN >> outfile.txt <br>
+<br>
 crtsh_enum.py domain.com >> outfile.txt <br> (called crtsh.py on my pc)
 <br>
+<br>
 censys manual checking. Go to the legit domain website and check the SSL Cert, use the O or CN and serach via hosts or certs on censys, you can filter via ports <br>
+<br>
 We can use censys api on kali using command <br>
+<br>
 censys subdomains domain.com (have to add api key) or use the below <br>
+<br>
 Use uncover for censys IPs to export to nuclei - └─$ uncover -cs "bbc.co.uk"     - uncover -cs "bbc.co.uk" | httpx | nuclei <br>
+<br>
 Or use uncover with ASN range for the company - have to find online - echo ASNNUMBER | uncover | httpx | nuclei <br>
-What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, you can verify any IP's do indeed belong to the company with whois checks and ssl checks <br>
+<br>
+What I also do is go to censys, select hosts, type in the domain name, then top left is ASN section, select the provider and itll show you IP spaces for the company, <br>
+you can verify any IP's do indeed belong to the company with whois checks and ssl checks <br>
 <br>
 Wordlist - use https://github.com/six2dez/OneListForAll
 <br>
 Brute force Subdomains with ffuf -u "https://FUZZ.target.com" -w pathtowordlist -mc 200,301,302,403 <br>
+<br>
 wfuzz -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt --sc 200,202,204,301,302,403 -u "https://stripeolt.com" -H "Host:FUZZ.example.com" -t 100 --hw "40" <br>
+<br>
 Use goaltdns to find more subdomains off the back of your file of subdomains <br>
+<br>
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
+<br>
 <br>
 <h1> VHOST DIscovery </h1> <br>
 copy subdomain file to directory /vhosts-sieve and run python3 vhosts-sieve.py -d file.txt -o file2.txt <br>
