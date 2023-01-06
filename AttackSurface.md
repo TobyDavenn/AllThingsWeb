@@ -48,7 +48,7 @@ use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/su
 <br>
 
 
-<b>BASH SCRIPTING THIS </b><br>
+<h3>Bash Scripting Subdomain Process </h3><br>
 First make file called subdomains.txt and add all domains in <br>
 for i in $(cat subdomains.txt);do Subfinder -d $i >> subdomainsmain.txt;done <br>
 for i in $(cat subdomains.txt);do amass enum -d $i >> subdomainsmain.txt;done <br>
