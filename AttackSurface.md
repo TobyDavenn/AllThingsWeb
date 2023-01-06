@@ -44,6 +44,12 @@ Use goaltdns to find more subdomains off the back of your file of subdomains <br
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
 <br>
 <br>
+<h2> Finding ASNS </h2> <br>
+Hurrican bge on google <br>
+<br>
+amass intel -org paypal <br>
+<br>
+<br>
 <h1> VHOST DIscovery </h1> <br>
 copy subdomain file to directory /vhosts-sieve and run python3 vhosts-sieve.py -d file.txt -o file2.txt <br>
 ffuf -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u https://towercoldchain.com/ -H "Host: FUZZ.towercoldchain.com" <br>
