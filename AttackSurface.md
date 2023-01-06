@@ -47,6 +47,10 @@ use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/su
 <b>Ensure to run httprobe on cat file of domains to filter live </b>-- cat alive.txt | httprobe -p 443 | tee out.txt <br>
 <br>
 
+<h3> Finding subdomains that resolve internally </h3>
+cat moredomains.txt | while read domain; do if host -t A "$domain" | awk '{print $NF}' | grep -E '^(192\.168\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|10\.)' &>/dev/null; then echo $domain; fi; done <br>
+<br>
+
 <h2> Finding ASNS </h2> <br>
 Hurrican bge on google <br>
 <br>
@@ -288,9 +292,32 @@ cat domains.txt | assetfinder --subs-only| httprobe | while read url; do xss1=$(
 /.htaccess<br>
 /script<br>
 /console<br>
+<br>
+<br>
 
+<h1> Exploitation </h1> <br>
+<br>
 
+<h2>Unauthenticated Elastic Search </h2> <br>
+We can find these servers by scanning for Port 9200 or the Shodan Dork below.<br>
+<br>
+port:"9200" elastic
+<br>
+<br>
 
+<h2>Unauthenticated Docker API</h2> <br>
+port:"2375" docker<br>
+<br>
+product:docker<br>
+<br>
+If you find a endpoint you can verifiy that its vulnerable by making a GET request too `/version`<br>
+<br>
+
+<h2> Jenkins </h2> <br>
+Shodan Dork to Find Open Jenkins Instances <br>
+<br>
+x-jenkins 200 <br>
+<br>
 
 
 
