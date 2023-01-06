@@ -44,12 +44,17 @@ Use goaltdns to find more subdomains off the back of your file of subdomains <br
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
 <br>
 <br>
+
+
 <h2> Finding ASNS </h2> <br>
 Hurrican bge on google <br>
 <br>
 amass intel -org paypal <br>
 <br>
+<b>We can pass the ASN range to amass </b>-- amass enum -d paypal.com -cidr 64.4.240.0/21 <br>
 <br>
+
+
 <h1> VHOST DIscovery </h1> <br>
 copy subdomain file to directory /vhosts-sieve and run python3 vhosts-sieve.py -d file.txt -o file2.txt <br>
 ffuf -w /usr/share/amass/wordlists/subdomains-top1mil-110000.txt -u https://towercoldchain.com/ -H "Host: FUZZ.towercoldchain.com" <br>
@@ -67,6 +72,8 @@ for i in $(cat buckets.txt); do aws s3 ls s3://$i; done;<br>
 This will require basic auth key/secret which you can get for free from AWS<br>
 <br>
 <br>
+
+
 <b>BASH SCRIPTING THIS </b><br>
 First make file called subdomains.txt and add all domains in <br>
 for i in $(cat subdomains.txt);do Subfinder -d $i >> subdomainsmain.txt;done <br>
@@ -92,6 +99,8 @@ nmap -iL outfile.txt -p 8000,8001,8002,8080,8443,5000,5001,88,9000,9001,9111,901
 <br>
 <b> Use gowitness to screenshot domains to have a look at whats interesting - gowitness file -f aliveoutfile.txt </b> <br>
 <br>
+
+
 <h1>FINDING URLS</h1><br>
 I use several tools for this job and my wordlists come from the following link https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content <br>
 or I use the locate command on kali linux if using CLI tools "locate Web-Content" <br>
@@ -108,8 +117,6 @@ JavaScript Link Finder**
 <br>
 Extract all js files with gau, burp, waybackurls or gospider and grep for further endpoints - cat file.js | grep -aoP "(?<= (\"|\'|\`))\/[a-zA-z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u    <br>
 Use gospider against subdomain list with gospider -s subdomains.txt -p http:burpproxy <br>
-
-
 <br> 1 liner for hidden JS endpoints - assetfinder example.com | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars"; done <br>
 <br>
 <br>
@@ -152,12 +159,13 @@ The exact same is for GAU <br>
 gau DOMAIN <br>
 cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
 <br>
+
+
 <h2>Param discovery</h2> <br>
 echo tesla.com | subfinder -silent | httpx -silent | cariddi -intensive <br>
 <br>
 Do subdomain crawling with go spioder and hakrawler and send to burp with httpx - gospider -S sites.txt -o output -c 10 -d 1 <br>
 <br>
-
 Run paramspider on target name or file to discover URLS and parameters - add to file name waybackurls.txt. <br>
 Run Arjun on direct URL endpoints to discover further Parameters in the URL request arjun -i subdomains.txt -m GET -oT param.txt <br> 
 <br>
@@ -166,17 +174,23 @@ Run Arjun on direct URL endpoints to discover further Parameters in the URL requ
  From here I like to run exact burp scans across the discovered URLS such as my XSS scan, SSRF, Open redirect etc <br>
  Always grep file types - waybackurls domain.com | grep zip   (can do txt, docx, xslx etc) <br>
 <br>
+ 
+ 
 <h2>wfuzz</h2> <br>
 output these files using >> urls.txt after each command
 wfuzz -w wordlist/general/common.txt http://DOMAIN <br>
 https://wfuzz.readthedocs.io/en/latest/user/basicusage.html <br>
 <br>
+ 
+ 
 <h2>dirsearch</h2>
 dirsearch -d DOMAIN -w WORDLIST --deep-recursive (for recursive) <br>
 I like to use this on a bash loop if scanning a file containing subdomains so I will use the following bash script <br>
 for i in $(cat aliveoutfile.txt)do; subfinder -d $i;done<br>
 This one liner can be used on any script just replace "subfinder" with the tool name then the syntax<br>
 <br>
+ 
+ 
 <h2>feroxbuster</h2>
 feroxbuster --url DOMAIN -w WORDLIST <br>
 <br>
@@ -192,6 +206,8 @@ for i in $(cat aliveoutfile.txt)do; paramspider.py -d $i >> paramspider.txt <br>
 Or you can use arjun with the bash one liner - for i in $(cat waybackurls.txt); do arjun -i $i;done <br>
 <br>
 <br>
+
+
 <h4>Further Param discovery </h4><br>
 Arjun -i aliveoutfile.txt -oT arjun.txt <br>
 Move contents of arjun.txt into waybackurls.txt
@@ -204,6 +220,8 @@ cat waybackurls.txt | gf xss | qsreplace '<.test>' | airixss -p "<.test>" (remov
 This will check all urls grepped under the xss catagory for reflection of unfiltered <>tags <br>
 Use the same one liner but for url encoder - cat waybackurls.txt | gf xss | qsreplace '%3Ctest%3E' | airixss -p "<.test>" <br>
 <br>
+
+
  <h4>Open Redirect </h4><br> 
  - cat waybackurls.txt | gf redirect | qsreplace "https://evil.com" | httpx -status-code -location -fc 404,401 <br>
 <br>
@@ -212,6 +230,8 @@ Use the same one liner but for url encoder - cat waybackurls.txt | gf xss | qsre
 cat waybackurls.txt | qsreplace BURPCOLLAB | airixss -p BURPCOLLAB <br>
 Here you want to check for the link being reflected and check for HTTP interaction on Burp Collab, if you get a hit, check manually for SSRF
 <br> 
+
+
  <h4>SSTI One Liner </h4><br>
  - cat waybackurls.txt | qsreplace "test{{7*7}}" | airixss -p "test49" > sstifuzz.txt <br>
  <br>
