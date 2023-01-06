@@ -47,6 +47,22 @@ use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/su
 <b>Ensure to run httprobe on cat file of domains to filter live </b>-- cat alive.txt | httprobe -p 443 | tee out.txt <br>
 <br>
 
+
+<b>BASH SCRIPTING THIS </b><br>
+First make file called subdomains.txt and add all domains in <br>
+for i in $(cat subdomains.txt);do Subfinder -d $i >> subdomainsmain.txt;done <br>
+for i in $(cat subdomains.txt);do amass enum -d $i >> subdomainsmain.txt;done <br>
+for i in $(cat subdomains.txt);do sublist3r -d $i >> subdomainsmain.txt;done <br>
+for i in $(cat subdomains.txt);do assetfinder $i | grep $i >> subdomainsmain.txt;done <br>
+for i in $(cat subdomains.txt);do python3 crtsh.py $i >> subdomainsmain.txt;done <br>
+Move all into one file <br>
+<br>
+<b> Now use crtsh.py to do subdomain scanning on subdomains to find even more </b> <br>
+<br> use hurricane search on an IP address to identify the ASN - https://bgp.he.net/ and then use the whois tab top right to verify
+What all this has done is built you a large file of subdomains owned by the company. <br>
+Also ensure you do subdomain scanning on found subdomains to get even more unique domains <br>
+<br>
+
 <h3> Finding subdomains that resolve internally </h3>
 cat moredomains.txt | while read domain; do if host -t A "$domain" | awk '{print $NF}' | grep -E '^(192\.168\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|10\.)' &>/dev/null; then echo $domain; fi; done <br>
 <br>
@@ -76,22 +92,6 @@ If you find open buckets you can run the useful bash look to enumerate content<b
 for i in $(cat buckets.txt); do aws s3 ls s3://$i; done;<br>
 This will require basic auth key/secret which you can get for free from AWS<br>
 <br>
-<br>
-
-
-<b>BASH SCRIPTING THIS </b><br>
-First make file called subdomains.txt and add all domains in <br>
-for i in $(cat subdomains.txt);do Subfinder -d $i >> subdomainsmain.txt;done <br>
-for i in $(cat subdomains.txt);do amass enum -d $i >> subdomainsmain.txt;done <br>
-for i in $(cat subdomains.txt);do sublist3r -d $i >> subdomainsmain.txt;done <br>
-for i in $(cat subdomains.txt);do assetfinder $i | grep $i >> subdomainsmain.txt;done <br>
-for i in $(cat subdomains.txt);do python3 crtsh.py $i >> subdomainsmain.txt;done <br>
-Move all into one file <br>
-<br>
-<b> Now use crtsh.py to do subdomain scanning on subdomains to find even more </b> <br>
-<br> use hurricane search on an IP address to identify the ASN - https://bgp.he.net/ and then use the whois tab top right to verify
-What all this has done is built you a large file of subdomains owned by the company. <br>
-Also ensure you do subdomain scanning on found subdomains to get even more unique domains <br>
 <br>
 
 <h1>PORT SCANNING</h1><br>
