@@ -34,7 +34,16 @@ wfuzz -c -f subdomains.txt -w /usr/share/amass/wordlists/subdomains-top1mil-1100
 <br>
 <br>
 
-
+<h2> Buckets </h2><br>
+Even if a subdomain does not follow normal bucket naming conventtion it may be resolving to an unsecured one. <br>
+Therefore run the following<br>
+python $Tools/S3Scanner/s3scanner.py -l domains.resolved -o buckets.txt<br>
+-d flag will dump all open buckets locally<br>
+If you find open buckets you can run the useful bash look to enumerate content<br>
+for i in $(cat buckets.txt); do aws s3 ls s3://$i; done;<br>
+This will require basic auth key/secret which you can get for free from AWS<br>
+<br>
+<br>
 <b>BASH SCRIPTING THIS </b><br>
 First make file called subdomains.txt and add all domains in <br>
 for i in $(cat subdomains.txt);do Subfinder -d $i >> subdomainsmain.txt;done <br>
