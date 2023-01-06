@@ -116,7 +116,6 @@ ffuff <br>
 Feroxbuster <br>
 JavaScript Link Finder** 
 <br>
-Extract all js files with gau, burp, waybackurls or gospider and grep for further endpoints - cat file.js | grep -aoP "(?<= (\"|\'|\`))\/[a-zA-z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u    <br>
 Use gospider against subdomain list with gospider -s subdomains.txt -p http:burpproxy <br>
 <br> 1 liner for hidden JS endpoints - assetfinder example.com | gau | egrep -v '(.css|.png|.jpeg|.jpg|.svg|.gif|.wolf)' | while read url; do vars=$(curl -s $url | grep -Eo "var [a-zA-Z0-9]+" | sed -e 's,'var','"$url"?',g' -e 's/ //g' | grep -v '.js' | sed 's/.*/&=xss/g'); echo -e "\e[1;33m$url\n\e[1;32m$vars"; done <br>
 <br>
@@ -161,6 +160,13 @@ gau DOMAIN <br>
 cat outfile.txt | gau | gf PATTERN | tee FILE.txt <br>
 <br>
 
+<h3> JavaScript Extract </h3><br>
+Extract all js files with gau, burp, waybackurls or gospider and grep for further endpoints - cat file.js | grep -aoP "(?<= (\"|\'|\`))\/[a-zA-z0-9_?&=\/\-\#\.]*(?=(\"|\'|\`))" | sort -u    <br>
+<br>
+Pass all JS endpoints to linkfinder.py -i endpoints.txt -o cli <br>
+<br>
+Use burp jsendpoints tab to look through <br>
+<br>
 
 <h2>Param discovery</h2> <br>
 echo tesla.com | subfinder -silent | httpx -silent | cariddi -intensive <br>
