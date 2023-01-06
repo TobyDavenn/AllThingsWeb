@@ -44,7 +44,8 @@ Use goaltdns to find more subdomains off the back of your file of subdomains <br
 use - mksub -df stripesubfinder.txt -w /usr/share/spiderfoot/spiderfoot/dicts/subdomains.txt | httprobe -p https:443    to find more subs
 <br>
 <br>
-
+<b>Ensure to run httprobe on cat file of domains to filter live </b>-- cat alive.txt | httprobe -p 443 | tee out.txt <br>
+<br>
 
 <h2> Finding ASNS </h2> <br>
 Hurrican bge on google <br>
