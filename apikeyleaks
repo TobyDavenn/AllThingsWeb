@@ -1,0 +1,1 @@
+echo "https://service.braun.com" | gau | grep ".js" | httpx -content-type | grep 'application/javascript' | awk '{print $1}' | nuclei -t /home/kali/nuclei-templates/exposures/ -silent
